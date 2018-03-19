@@ -12,6 +12,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using LPO.Module.BusinessObjects.Communication;
+using lpmt_xaf.Module.BusinessObjects.Project_Schedule;
 
 namespace LPO.Module.BusinessObjects.Projects
 {
@@ -63,6 +64,18 @@ namespace LPO.Module.BusinessObjects.Projects
         {
             get => client;
             set => SetPropertyValue(nameof(Client), ref client, value);
+        }
+
+        [Association("Project-ProjectEvents")]
+        public XPCollection<ProjectEvent> ProjectEvents => GetCollection<ProjectEvent>(nameof(ProjectEvents));
+
+        string projectFolder;
+        [Size(255)]
+        [EditorAlias("HyperLinkStringPropertyEditor")]
+        public string ProjectFolder
+        {
+            get => projectFolder;
+            set => SetPropertyValue(nameof(ProjectFolder), ref projectFolder, value);
         }
     }
 }

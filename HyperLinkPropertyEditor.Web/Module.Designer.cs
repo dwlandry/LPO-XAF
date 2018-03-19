@@ -1,5 +1,5 @@
-﻿namespace LPO.Module.Win {
-    partial class lpmt_xafWindowsFormsModule {
+﻿namespace HyperLinkPropertyEditor.Web {
+    partial class HyperLinkPropertyEditorAspNetModule {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing) {
-            if(disposing && (components != null)) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -24,15 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             // 
-            // lpmt_xafWindowsFormsModule
+            // HyperLinkPropertyEditorAspNetModule
             // 
-            this.RequiredModuleTypes.Add(typeof(LPO.Module.lpmt_xafModule));
-            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
-            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule));
-            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.ValidationModule));
 
         }
-
         #endregion
     }
 }

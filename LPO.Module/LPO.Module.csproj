@@ -99,6 +99,7 @@
     <Compile Include="BusinessObjects\Communication\CommunicationItem.cs" />
     <Compile Include="BusinessObjects\Communication\ItemComment.cs" />
     <Compile Include="BusinessObjects\Communication\Origination.cs" />
+    <Compile Include="BusinessObjects\Project Schedule\ProjectEvent.cs" />
     <Compile Include="BusinessObjects\Projects\Project.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
@@ -146,6 +147,7 @@
       <Name>GenerateUserFriendlyId.Module</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

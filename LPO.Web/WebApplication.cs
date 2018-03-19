@@ -20,6 +20,9 @@ namespace LPO.Web {
         private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule objectsModule;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private GenerateUserFriendlyId.Module.GenerateUserFriendlyIdModule generateUserFriendlyIdModule1;
+        private DevExpress.ExpressApp.Scheduler.SchedulerModuleBase schedulerModuleBase1;
+        private DevExpress.ExpressApp.Scheduler.Web.SchedulerAspNetModule schedulerAspNetModule1;
+        private HyperLinkPropertyEditor.Web.HyperLinkPropertyEditorAspNetModule hyperLinkPropertyEditorAspNetModule1;
         private DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule validationAspNetModule;
 
         #region Default XAF configuration options (https://www.devexpress.com/kb=T501418)
@@ -94,6 +97,9 @@ namespace LPO.Web {
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.validationAspNetModule = new DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule();
             this.generateUserFriendlyIdModule1 = new GenerateUserFriendlyId.Module.GenerateUserFriendlyIdModule();
+            this.schedulerModuleBase1 = new DevExpress.ExpressApp.Scheduler.SchedulerModuleBase();
+            this.schedulerAspNetModule1 = new DevExpress.ExpressApp.Scheduler.Web.SchedulerAspNetModule();
+            this.hyperLinkPropertyEditorAspNetModule1 = new HyperLinkPropertyEditor.Web.HyperLinkPropertyEditorAspNetModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -124,8 +130,11 @@ namespace LPO.Web {
             this.Modules.Add(this.generateUserFriendlyIdModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.validationAspNetModule);
+            this.Modules.Add(this.schedulerModuleBase1);
+            this.Modules.Add(this.schedulerAspNetModule1);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
+            this.Modules.Add(this.hyperLinkPropertyEditorAspNetModule1);
             this.Security = this.securityStrategyComplex1;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.lpmt_xafAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
