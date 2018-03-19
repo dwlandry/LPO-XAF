@@ -12,7 +12,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 
-namespace lpmt_xaf.Module.BusinessObjects.Communication
+namespace LPO.Module.BusinessObjects.Communication
 {
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
