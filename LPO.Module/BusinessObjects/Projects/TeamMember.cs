@@ -11,9 +11,8 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using LPO.Module.BusinessObjects.Projects;
 
-namespace LPO.Module.BusinessObjects.Project_Schedule
+namespace LPO.Module.BusinessObjects.Projects
 {
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
@@ -21,9 +20,9 @@ namespace LPO.Module.BusinessObjects.Project_Schedule
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class ProjectEvent : Event
+    public class TeamMember : Person
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public ProjectEvent(Session session)
+        public TeamMember(Session session)
             : base(session)
         {
         }
@@ -32,13 +31,28 @@ namespace LPO.Module.BusinessObjects.Project_Schedule
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
+        string company;
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Company
+        {
+            get => company;
+            set => SetPropertyValue(nameof(Company), ref company, value);
+        }
+        string projectRole;
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string ProjectRole
+        {
+            get => projectRole;
+            set => SetPropertyValue(nameof(ProjectRole), ref projectRole, value);
+        }
 
         Project project;
-        [Association("Project-ProjectEvents")]
+        [Association("Project-TeamMembers")]
         public Project Project
         {
             get => project;
             set => SetPropertyValue(nameof(Project), ref project, value);
         }
+
     }
 }

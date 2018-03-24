@@ -17,7 +17,7 @@ using DevExpress.Persistent.BaseImpl;
 namespace LPO.Module.Win {
     [ToolboxItemFilter("Xaf.Platform.Win")]
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
-    public sealed partial class lpmt_xafWindowsFormsModule : ModuleBase {
+    public sealed partial class LPOWindowsFormsModule : ModuleBase {
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e) {
         //    e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), true, "Win");
         //    e.Handled = true;
@@ -26,7 +26,7 @@ namespace LPO.Module.Win {
             e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), false, "Win");
             e.Handled = true;
         }
-        public lpmt_xafWindowsFormsModule() {
+        public LPOWindowsFormsModule() {
             InitializeComponent();
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("lpmt-xaf.Web")]
+[assembly: AssemblyTitle("LPO.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("-")]
-[assembly: AssemblyProduct("lpmt-xaf.Web")]
+[assembly: AssemblyProduct("LPO.Web")]
 [assembly: AssemblyCopyright("Copyright © - 2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

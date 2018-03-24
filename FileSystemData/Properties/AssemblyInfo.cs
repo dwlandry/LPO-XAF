@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LPO.Win")]
+[assembly: AssemblyTitle("FileSystemData")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("-")]
-[assembly: AssemblyProduct("LPO.Win")]
-[assembly: AssemblyCopyright("Copyright © - 2007")]
+[assembly: AssemblyProduct("FileSystemData")]
+[assembly: AssemblyCopyright("Copyright Dennis Garavsky© - 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

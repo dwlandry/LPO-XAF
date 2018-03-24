@@ -1,5 +1,5 @@
 ﻿namespace LPO.Module.Win {
-    partial class lpmt_xafWindowsFormsModule {
+    partial class LPOWindowsFormsModule {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -24,12 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             // 
-            // lpmt_xafWindowsFormsModule
+            // LPOWindowsFormsModule
             // 
-            this.RequiredModuleTypes.Add(typeof(LPO.Module.lpmt_xafModule));
+            this.RequiredModuleTypes.Add(typeof(LPO.Module.LPOModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Scheduler.Win.SchedulerWindowsFormsModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2));
 
         }
 

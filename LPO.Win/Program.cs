@@ -25,7 +25,7 @@ namespace LPO.Win {
                 Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath;
             }
             Tracing.Initialize();
-            lpmt_xafWindowsFormsApplication winApplication = new lpmt_xafWindowsFormsApplication();
+            LPOWindowsFormsApplication winApplication = new LPOWindowsFormsApplication();
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
             SecurityAdapterHelper.Enable();

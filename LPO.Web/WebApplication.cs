@@ -9,11 +9,11 @@ using DevExpress.ExpressApp.Security.ClientServer;
 
 namespace LPO.Web {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/DevExpressExpressAppWebWebApplicationMembersTopicAll.aspx
-    public partial class lpmt_xafAspNetApplication : WebApplication {
+    public partial class LPOAspNetApplication : WebApplication {
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule module2;
-        private LPO.Module.lpmt_xafModule module3;
-        private LPO.Module.Web.lpmt_xafAspNetModule module4;
+        private LPO.Module.LPOModule module3;
+        private LPO.Module.Web.LPOAspNetModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationActiveDirectory authenticationActiveDirectory1;
@@ -23,10 +23,16 @@ namespace LPO.Web {
         private DevExpress.ExpressApp.Scheduler.SchedulerModuleBase schedulerModuleBase1;
         private DevExpress.ExpressApp.Scheduler.Web.SchedulerAspNetModule schedulerAspNetModule1;
         private HyperLinkPropertyEditor.Web.HyperLinkPropertyEditorAspNetModule hyperLinkPropertyEditorAspNetModule1;
+        private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV21;
+        private FileSystemData.FileSystemDataModule fileSystemDataModule1;
+        private DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2 reportsAspNetModuleV21;
+        private DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule fileAttachmentsAspNetModule1;
+        private GenerateUserFriendlyId.Module.GenerateUserFriendlyIdModule generateUserFriendlyIdModule2;
+        private Module.LPOModule LPOModule1;
         private DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule validationAspNetModule;
 
         #region Default XAF configuration options (https://www.devexpress.com/kb=T501418)
-        static lpmt_xafAspNetApplication() {
+        static LPOAspNetApplication() {
 			EnableMultipleBrowserTabsSupport = true;
             DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridListEditor.AllowFilterControlHierarchy = true;
             DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridListEditor.MaxFilterControlHierarchyDepth = 3;
@@ -40,13 +46,14 @@ namespace LPO.Web {
             OptimizedControllersCreation = true;
         }
         #endregion
-        public lpmt_xafAspNetApplication() {
+        public LPOAspNetApplication() {
             InitializeComponent();
 			InitializeDefaults();
         }
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args) {
             args.ObjectSpaceProvider = new SecuredObjectSpaceProvider((SecurityStrategyComplex)Security, GetDataStoreProvider(args.ConnectionString, args.Connection), true);
             args.ObjectSpaceProviders.Add(new NonPersistentObjectSpaceProvider(TypesInfo, null));
+            GenerateUserFriendlyId.Module.SequenceGenerator.Initialize(this, args.ConnectionString); //!!!
         }
         private IXpoDataStoreProvider GetDataStoreProvider(string connectionString, System.Data.IDbConnection connection) {
             System.Web.HttpApplicationState application = (System.Web.HttpContext.Current != null) ? System.Web.HttpContext.Current.Application : null;
@@ -62,7 +69,7 @@ namespace LPO.Web {
             }
 			return dataStoreProvider;
         }
-        private void lpmt_xafAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
+        private void LPOAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
 #if EASYTEST
             e.Updater.Update();
             e.Handled = true;
@@ -88,8 +95,8 @@ namespace LPO.Web {
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule();
-            this.module3 = new LPO.Module.lpmt_xafModule();
-            this.module4 = new LPO.Module.Web.lpmt_xafAspNetModule();
+            this.module3 = new LPO.Module.LPOModule();
+            this.module4 = new LPO.Module.Web.LPOAspNetModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
@@ -100,6 +107,12 @@ namespace LPO.Web {
             this.schedulerModuleBase1 = new DevExpress.ExpressApp.Scheduler.SchedulerModuleBase();
             this.schedulerAspNetModule1 = new DevExpress.ExpressApp.Scheduler.Web.SchedulerAspNetModule();
             this.hyperLinkPropertyEditorAspNetModule1 = new HyperLinkPropertyEditor.Web.HyperLinkPropertyEditorAspNetModule();
+            this.reportsModuleV21 = new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2();
+            this.fileSystemDataModule1 = new FileSystemData.FileSystemDataModule();
+            this.reportsAspNetModuleV21 = new DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2();
+            this.fileAttachmentsAspNetModule1 = new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule();
+            this.generateUserFriendlyIdModule2 = new GenerateUserFriendlyId.Module.GenerateUserFriendlyIdModule();
+            this.LPOModule1 = new LPO.Module.LPOModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -119,24 +132,33 @@ namespace LPO.Web {
             this.validationModule.AllowValidationDetailsAccess = true;
             this.validationModule.IgnoreWarningAndInformationRules = false;
             // 
-            // lpmt_xafAspNetApplication
+            // reportsModuleV21
             // 
-            this.ApplicationName = "lpmt-xaf";
+            this.reportsModuleV21.EnableInplaceReports = true;
+            this.reportsModuleV21.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
+            // 
+            // LPOAspNetApplication
+            // 
+            this.ApplicationName = "LPO";
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
             this.Modules.Add(this.objectsModule);
             this.Modules.Add(this.validationModule);
             this.Modules.Add(this.generateUserFriendlyIdModule1);
+            this.Modules.Add(this.reportsModuleV21);
+            this.Modules.Add(this.fileSystemDataModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.validationAspNetModule);
             this.Modules.Add(this.schedulerModuleBase1);
             this.Modules.Add(this.schedulerAspNetModule1);
+            this.Modules.Add(this.reportsAspNetModuleV21);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
             this.Modules.Add(this.hyperLinkPropertyEditorAspNetModule1);
+            this.Modules.Add(this.fileAttachmentsAspNetModule1);
             this.Security = this.securityStrategyComplex1;
-            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.lpmt_xafAspNetApplication_DatabaseVersionMismatch);
+            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.LPOAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

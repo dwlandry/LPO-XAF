@@ -1,8 +1,8 @@
-﻿;#DropDB lpmt_xafEasyTest
+﻿;#DropDB LPOEasyTest
 
-#Application lpmt_xaf.Win
-#Application lpmt_xaf.Web
-#IfDef lpmt_xaf.Win
+#Application LPO.Win
+#Application LPO.Web
+#IfDef LPO.Win
 
 *Action About...
  
@@ -10,6 +10,6 @@
 
 #EndIf
 
-#IfDef lpmt_xaf.Web
+#IfDef LPO.Web
 *Action Navigation(My Details)
 #EndIf

@@ -24,7 +24,7 @@ namespace LPO.Web {
         }
         protected void Session_Start(Object sender, EventArgs e) {
             Tracing.Initialize();
-            WebApplication.SetInstance(Session, new lpmt_xafAspNetApplication());
+            WebApplication.SetInstance(Session, new LPOAspNetApplication());
             DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
