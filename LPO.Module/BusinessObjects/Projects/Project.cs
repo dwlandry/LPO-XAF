@@ -18,7 +18,7 @@ using FileSystemData.BusinessObjects;
 namespace LPO.Module.BusinessObjects.Projects
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
+    [ImageName("BO_Handshake")]
     [DefaultProperty("DisplayName")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]

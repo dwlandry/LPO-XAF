@@ -19,6 +19,7 @@ using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.ReportsV2;
 using LPO.Module.Reports;
 using LPO.Module.BusinessObjects.Communication;
+using System.Configuration;
 
 namespace LPO.Module {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
@@ -26,6 +27,8 @@ namespace LPO.Module {
         public LPOModule() {
             InitializeComponent();
 			BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction;
+            Address.SetFullAddressFormat(ConfigurationManager.AppSettings["FullAddressFormat"], ConfigurationManager.AppSettings["FullAddressFormatPersistentAlias"]);
+
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);

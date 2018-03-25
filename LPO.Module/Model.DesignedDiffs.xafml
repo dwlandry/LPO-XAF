@@ -1,8 +1,46 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="LPO">
+  <NavigationItems>
+    <Items>
+      <Item Id="Projects" ChildItemsDisplayStyle="List" Index="0" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Projects" ChildItemsDisplayStyle="List" Index="0" ImageName="BO_Folder" ViewId="Project_ListView" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Project_ListView" ViewId="Project_ListView" ObjectKey="" Caption="Projects" ImageName="BO_Handshake" IsNewNode="True" />
+              <Item Id="TeamMember_ListView" ViewId="TeamMember_ListView" ObjectKey="" Caption="Team Members" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Communication" ChildItemsDisplayStyle="List" Index="1" ViewId="CommunicationItem_ListView" ImageName="BO_Folder" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="CommunicationItem_ListView" ViewId="CommunicationItem_ListView" ObjectKey="" Caption="Communication" Index="0" IsNewNode="True" />
+              <Item Id="Category_ListView" ViewId="Category_ListView" ObjectKey="" Caption="Categories" IsNewNode="True" />
+              <Item Id="ItemComment_ListView" ViewId="ItemComment_ListView" ObjectKey="" Visible="False" IsNewNode="True" />
+              <Item Id="Origination_ListView" ViewId="Origination_ListView" ObjectKey="" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Client_ListView" ViewId="Client_ListView" ObjectKey="" Caption="Clients" Index="2" ImageName="BO_Customer" IsNewNode="True" />
+          <Item Id="GoByDocument_ListView" ViewId="GoByDocument_ListView" ObjectKey="" Caption="Go Bys" Index="3" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Index="1" />
+      <Item Id="Default">
+        <Items>
+          <Item Id="Category_ListView" Removed="True" />
+          <Item Id="Client_ListView" Removed="True" />
+          <Item Id="CommunicationItem_ListView" Removed="True" />
+          <Item Id="GoByDocument_ListView" Removed="True" />
+          <Item Id="ItemComment_ListView" Removed="True" />
+          <Item Id="Origination_ListView" Removed="True" />
+          <Item Id="Project_ListView" Removed="True" />
+          <Item Id="TeamMember_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
-  <Views>
-  </Views>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="17.2.5.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>

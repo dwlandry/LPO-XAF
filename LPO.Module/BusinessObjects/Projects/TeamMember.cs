@@ -15,7 +15,7 @@ using DevExpress.Persistent.Validation;
 namespace LPO.Module.BusinessObjects.Projects
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
+    [ImageName("BO_Person")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]

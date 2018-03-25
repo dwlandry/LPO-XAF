@@ -15,7 +15,7 @@ using DevExpress.Persistent.Validation;
 namespace LPO.Module.BusinessObjects.Client
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
+    [ImageName("BO_Customer")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
@@ -44,5 +44,7 @@ namespace LPO.Module.BusinessObjects.Client
 
         [Association("Client-Projects")]
         public XPCollection<Projects.Project> Projects => GetCollection<Projects.Project>(nameof(Projects));
+
+        
     }
 }

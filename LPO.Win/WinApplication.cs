@@ -7,6 +7,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Security.ClientServer;
+using DevExpress.Persistent.BaseImpl;
 
 namespace LPO.Win {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/DevExpressExpressAppWinWinApplicationMembersTopicAll.aspx
@@ -25,6 +26,7 @@ namespace LPO.Win {
         public LPOWindowsFormsApplication() {
             InitializeComponent();
 			InitializeDefaults();
+
             /// To open the linked file without creating a temporary one (and keep any changes to it after closing the program), handle the FileAttachmentsWindowsFormsModule.CustomOpenFileWithDefaultProgram event and call the e.FileData.SaveToStream method and pass null (nothing in VB.NET) as a parameter.
             fileAttachmentsWindowsFormsModule1.CustomOpenFileWithDefaultProgram += new EventHandler<DevExpress.ExpressApp.FileAttachments.Win.CustomFileOperationEventArgs>(fileAttachmentsWindowsFormsModule1_CustomOpenFileWithDefaultProgram);
         }

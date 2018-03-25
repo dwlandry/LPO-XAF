@@ -156,6 +156,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SvgSkinController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>

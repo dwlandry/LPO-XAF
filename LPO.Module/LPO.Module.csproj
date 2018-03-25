@@ -101,6 +101,7 @@
       <Name>System</Name>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data">
       <Name>System.Data</Name>
       <Private>False</Private>
@@ -179,6 +180,15 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\BO_Handshake.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BO_Handshake_32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BO_Handshake_48x48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
