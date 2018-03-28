@@ -12,8 +12,9 @@ using DevExpress.XtraEditors.Repository;
 namespace HyperLinkPropertyEditor.Win {
 	[PropertyEditor(typeof(System.String), "HyperLinkStringPropertyEditor", false)]
     public class WinHyperLinkStringPropertyEditor : StringPropertyEditor {
-		//Dennis TODO: This is to be setup via the Model Editor at the ViewItems | PropertyEditors | HyperLinkStringPropertyEditor level once.
-        public const string UrlEmailMask = @"(((http|https|ftp)\://)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;amp;%\$#\=~])*)|([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})";
+        //Dennis TODO: This is to be setup via the Model Editor at the ViewItems | PropertyEditors | HyperLinkStringPropertyEditor level once.
+        //public const string UrlEmailMask = @"(((http|https|ftp)\://)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;amp;%\$#\=~])*)|([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})";
+        public const string UrlEmailMask = @".*";
         private HyperLinkEdit hyperlinkEditCore;
         public WinHyperLinkStringPropertyEditor(Type objectType, IModelMemberViewItem info)
             : base(objectType, info) {
@@ -44,7 +45,7 @@ namespace HyperLinkPropertyEditor.Win {
             if (!string.IsNullOrEmpty(url)) {
                 if (url.Contains("@") && IsValidUrl(url))
                     return string.Format("mailto:{0}", url);
-                if (!url.Contains("://"))
+                if (!url.Contains("://") && url.StartsWith("www"))
                     url = string.Format("http://{0}", url);
                 if (IsValidUrl(url))
                     return url;

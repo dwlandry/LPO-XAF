@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>15.0.26228.4</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{484A8217-DD6B-4E8F-B47E-F1F64D03BBB6}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -58,26 +57,33 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.Data.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Data.v17.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.ExpressApp.Xpo.v17.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.ExpressApp.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.ExpressApp.v17.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.ExpressApp.Validation.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.ExpressApp.Validation.v17.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.Persistent.Base.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Persistent.Base.v17.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Persistent.BaseImpl.v17.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v16.1">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.Xpo.v17.2">
+      <Private>True</Private>
+      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Xpo.v17.2.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

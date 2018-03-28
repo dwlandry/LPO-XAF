@@ -11,18 +11,20 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using FileSystemData.BusinessObjects;
 
-namespace LPO.Module.BusinessObjects.Client
+namespace LPO.Module.BusinessObjects.Projects
 {
     [DefaultClassOptions]
-    [ImageName("BO_Customer")]
+    [FileAttachment("File")]
+    //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class Client : Party
+    public class ProjectGoByDocument : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public Client(Session session)
+        public ProjectGoByDocument(Session session)
             : base(session)
         {
         }
@@ -31,22 +33,28 @@ namespace LPO.Module.BusinessObjects.Client
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-        string name;
-        [XafDisplayName("Client")]
-        [Size(50)]
-        public string Name
+        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never), ImmediatePostData]
+        public FileSystemStoreObject File
         {
-            get => name;
-            set => SetPropertyValue(nameof(Name), ref name, value);
+            get => GetPropertyValue<FileSystemStoreObject>("File");
+            set => SetPropertyValue<FileSystemStoreObject>("File", value);
         }
 
-        public override string DisplayName => name;
 
-        [Association("Client-Projects")]
-        public XPCollection<Projects.Project> Projects => GetCollection<Projects.Project>(nameof(Projects));
+        string description;
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Description
+        {
+            get => description;
+            set => SetPropertyValue(nameof(Description), ref description, value);
+        }
 
-        [Association("Client-Documents")]
-        public XPCollection<ClientDocument> Documents => GetCollection<ClientDocument>(nameof(Documents));
-
+        Project project;
+        [Association("Project-GoBys")]
+        public Project Project
+        {
+            get => project;
+            set => SetPropertyValue(nameof(Project), ref project, value);
+        }
     }
 }

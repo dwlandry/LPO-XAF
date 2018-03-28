@@ -23,7 +23,7 @@ namespace LPO.Module.BusinessObjects.Projects
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    [FileAttachment("ProjectFolder")]
+    //[FileAttachment("ProjectFolder")]
     public class Project : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
         public Project(Session session)
@@ -52,13 +52,7 @@ namespace LPO.Module.BusinessObjects.Projects
         }
 
         [Association("Project-CommunicationItems")]
-        public XPCollection<CommunicationItem> CommunicationItems
-        {
-            get
-            {
-                return GetCollection<CommunicationItem>(nameof(CommunicationItems));
-            }
-        }
+        public XPCollection<CommunicationItem> CommunicationItems => GetCollection<CommunicationItem>(nameof(CommunicationItems));
 
         Client.Client client;
         [Association("Client-Projects")]
@@ -71,9 +65,10 @@ namespace LPO.Module.BusinessObjects.Projects
         [Association("Project-ProjectEvents")]
         public XPCollection<ProjectEvent> ProjectEvents => GetCollection<ProjectEvent>(nameof(ProjectEvents));
 
-        FileSystemLinkObject projectFolder;
-        [DevExpress.Xpo.Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never), ImmediatePostData]
-        public FileSystemLinkObject ProjectFolder
+        string projectFolder;
+        //[RuleRegularExpression("HyperLinkDemoObject.Url.RuleRegularExpression", DefaultContexts.Save, @"(((http|https|ftp)\://)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*)|([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})")]
+        [EditorAlias("HyperLinkStringPropertyEditor")]
+        public string ProjectFolder
         {
             get => projectFolder;
             set => SetPropertyValue(nameof(ProjectFolder), ref projectFolder, value);
@@ -82,6 +77,18 @@ namespace LPO.Module.BusinessObjects.Projects
         [Association("Project-TeamMembers")]
         public XPCollection<TeamMember> TeamMembers => GetCollection<TeamMember>(nameof(TeamMembers));
 
-        public string DisplayName => string.Format("({0}) {1} - {2}", client.Name, projectNumber, projectDescription);
+        [Association("Project-GoBys")]
+        public XPCollection<ProjectGoByDocument> GoBys => GetCollection<ProjectGoByDocument>(nameof(GoBys));
+
+        [Association("Project-Documents")]
+        public XPCollection<ProjectDocument> Documents => GetCollection<ProjectDocument>(nameof(Documents));
+
+        public string DisplayName
+        {
+            get
+            {
+                return client != null ? string.Format("({0}) {1} - {2}", client.Name, projectNumber, projectDescription) : string.Format("{0} - {1}", projectNumber, projectDescription);
+            }
+        }
     }
 }

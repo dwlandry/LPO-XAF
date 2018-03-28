@@ -45,6 +45,8 @@ namespace LPO.Module.BusinessObjects.Communication
                 base.OnSaving();
             }
 
+            DateOpened = DateTime.Today;
+
             IncludeInReport = true;
 
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).

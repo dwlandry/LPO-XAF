@@ -52,27 +52,27 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.v17.2">
       <Private>True</Private>
-      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Data.v17.2.dll</HintPath>
+      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Xpo.v17.2">
       <Private>True</Private>
-      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.ExpressApp.Xpo.v17.2.dll</HintPath>
+      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.v17.2">
       <Private>True</Private>
-      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.ExpressApp.v17.2.dll</HintPath>
+      
     </Reference>
     <Reference Include="DevExpress.Persistent.Base.v17.2">
       <Private>True</Private>
-      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Persistent.Base.v17.2.dll</HintPath>
+      
     </Reference>
     <Reference Include="DevExpress.Persistent.BaseImpl.v17.2">
       <Private>True</Private>
-      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Persistent.BaseImpl.v17.2.dll</HintPath>
+      
     </Reference>
     <Reference Include="DevExpress.Xpo.v17.2">
       <Private>True</Private>
-      <HintPath>E:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Xpo.v17.2.dll</HintPath>
+      
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

@@ -19,12 +19,12 @@ namespace LPO.Module.BusinessObjects.GoBy_Documents
         }
 
 
-        //string description;
-        //[Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        //public string Description
-        //{
-        //    get => description;
-        //    set => SetPropertyValue(nameof(Description), ref description, value);
-        //}
+        string description;
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Description
+        {
+            get => description;
+            set => SetPropertyValue(nameof(Description), ref description, value);
+        }
     }
 }

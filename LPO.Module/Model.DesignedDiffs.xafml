@@ -32,6 +32,7 @@
           <Item Id="ItemComment_ListView" Removed="True" />
           <Item Id="Origination_ListView" Removed="True" />
           <Item Id="Project_ListView" Removed="True" />
+          <Item Id="ProjectGoByDocument_ListView" Removed="True" />
           <Item Id="TeamMember_ListView" Removed="True" />
         </Items>
       </Item>
