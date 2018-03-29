@@ -14,6 +14,8 @@ using DevExpress.Persistent.Validation;
 using LPO.Module.BusinessObjects.Communication;
 using LPO.Module.BusinessObjects.Project_Schedule;
 using FileSystemData.BusinessObjects;
+using LPO.Module.BusinessObjects.Instruments;
+using LPO.Module.BusinessObjects.Documents;
 
 namespace LPO.Module.BusinessObjects.Projects
 {
@@ -83,12 +85,14 @@ namespace LPO.Module.BusinessObjects.Projects
         [Association("Project-Documents")]
         public XPCollection<ProjectDocument> Documents => GetCollection<ProjectDocument>(nameof(Documents));
 
-        public string DisplayName
-        {
-            get
-            {
-                return client != null ? string.Format("({0}) {1} - {2}", client.Name, projectNumber, projectDescription) : string.Format("{0} - {1}", projectNumber, projectDescription);
-            }
-        }
+        public string DisplayName => client != null ? string.Format("({0}) {1} - {2}", client.Name, projectNumber, projectDescription) : string.Format("{0} - {1}", projectNumber, projectDescription);
+
+        [Association("Project-Instruments")]
+        public XPCollection<Instrument> Instruments => GetCollection<Instrument>(nameof(Instruments));
+
+        [Association("Project-PIDs")]
+        public XPCollection<PID> PIDs => GetCollection<PID>(nameof(PIDs));
+
+
     }
 }

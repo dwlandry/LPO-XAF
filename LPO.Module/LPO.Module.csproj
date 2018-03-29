@@ -125,7 +125,12 @@
     <Compile Include="BusinessObjects\Communication\CommunicationItem.cs" />
     <Compile Include="BusinessObjects\Communication\ItemComment.cs" />
     <Compile Include="BusinessObjects\Communication\Origination.cs" />
+    <Compile Include="BusinessObjects\Documents\PID.cs" />
     <Compile Include="BusinessObjects\GoBy Documents\GoByDocument.cs" />
+    <Compile Include="BusinessObjects\Instruments\Instrument.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentStatus.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentType.cs" />
+    <Compile Include="BusinessObjects\Instruments\ProjectScope.cs" />
     <Compile Include="BusinessObjects\Project Schedule\ProjectEvent.cs" />
     <Compile Include="BusinessObjects\Projects\Project.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectDocument.cs" />
