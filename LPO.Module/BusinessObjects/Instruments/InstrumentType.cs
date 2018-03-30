@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using LPO.Module.BusinessObjects.Instrument_Spec;
 
 namespace LPO.Module.BusinessObjects.Instruments
 {
@@ -42,7 +43,9 @@ namespace LPO.Module.BusinessObjects.Instruments
             set => SetPropertyValue(nameof(Name), ref name, value);
         }
 
-
+        [Association("InstrumentType-InstrumentTypeSpecItems")]
+        [XafDisplayName("Spec Items")]
+        public XPCollection<InstrumentTypeSpecItem> InstrumentTypeSpecItems => GetCollection<InstrumentTypeSpecItem>(nameof(InstrumentTypeSpecItems));
 
     }
 }

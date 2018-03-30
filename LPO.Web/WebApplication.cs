@@ -29,6 +29,7 @@ namespace LPO.Web {
         private DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule fileAttachmentsAspNetModule1;
         private GenerateUserFriendlyId.Module.GenerateUserFriendlyIdModule generateUserFriendlyIdModule2;
         private Module.LPOModule LPOModule1;
+        private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule1;
         private DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule validationAspNetModule;
 
         #region Default XAF configuration options (https://www.devexpress.com/kb=T501418)
@@ -113,6 +114,7 @@ namespace LPO.Web {
             this.fileAttachmentsAspNetModule1 = new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule();
             this.generateUserFriendlyIdModule2 = new GenerateUserFriendlyId.Module.GenerateUserFriendlyIdModule();
             this.LPOModule1 = new LPO.Module.LPOModule();
+            this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -148,6 +150,7 @@ namespace LPO.Web {
             this.Modules.Add(this.generateUserFriendlyIdModule1);
             this.Modules.Add(this.reportsModuleV21);
             this.Modules.Add(this.fileSystemDataModule1);
+            this.Modules.Add(this.conditionalAppearanceModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.validationAspNetModule);
             this.Modules.Add(this.schedulerModuleBase1);
