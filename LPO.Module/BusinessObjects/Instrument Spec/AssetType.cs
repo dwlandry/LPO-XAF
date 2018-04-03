@@ -11,8 +11,6 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using LPO.Module.BusinessObjects.Instrument_Spec;
-using LPO.Module.BusinessObjects.Instruments;
 
 namespace LPO.Module.BusinessObjects.Instrument_Spec
 {
@@ -22,9 +20,9 @@ namespace LPO.Module.BusinessObjects.Instrument_Spec
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class InstrumentTypeSpecItem : SpecItem
+    public class AssetType : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public InstrumentTypeSpecItem(Session session)
+        public AssetType(Session session)
             : base(session)
         {
         }
@@ -47,20 +45,13 @@ namespace LPO.Module.BusinessObjects.Instrument_Spec
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
-        InstrumentType instrumentType;
-        [Association("InstrumentType-InstrumentTypeSpecItems")]
-        public InstrumentType InstrumentType
-        {
-            get => instrumentType;
-            set => SetPropertyValue(nameof(InstrumentType), ref instrumentType, value);
-        }
 
-        string alias;
+        string name;
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Alias
+        public string Name
         {
-            get => alias;
-            set => SetPropertyValue(nameof(Alias), ref alias, value);
+            get => name;
+            set => SetPropertyValue(nameof(Name), ref name, value);
         }
     }
 }

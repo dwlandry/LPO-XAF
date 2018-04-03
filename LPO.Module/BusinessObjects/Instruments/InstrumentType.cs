@@ -43,9 +43,10 @@ namespace LPO.Module.BusinessObjects.Instruments
             set => SetPropertyValue(nameof(Name), ref name, value);
         }
 
-        [Association("InstrumentType-InstrumentTypeSpecItems")]
-        [XafDisplayName("Spec Items")]
-        public XPCollection<InstrumentTypeSpecItem> InstrumentTypeSpecItems => GetCollection<InstrumentTypeSpecItem>(nameof(InstrumentTypeSpecItems));
+        //[Association("InstrumentTypeSpecItem-InstrumentType")]
+        //public XPCollection<InstrumentTypeSpecItem> InstrumentTypeSpecItems => GetCollection<InstrumentTypeSpecItem>(nameof(InstrumentTypeSpecItems));
 
+        [Association("InstrumentType-SpecItems")]
+        public XPCollection<SpecItem> SpecItems => GetCollection<SpecItem>(nameof(SpecItems));
     }
 }

@@ -13,6 +13,8 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using LPO.Module.BusinessObjects.Projects;
 using LPO.Module.BusinessObjects.Documents;
+using LPO.Module.BusinessObjects.Instrument_Spec;
+using DevExpress.CodeParser;
 
 namespace LPO.Module.BusinessObjects.Instruments
 {
@@ -33,20 +35,53 @@ namespace LPO.Module.BusinessObjects.Instruments
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-        //private string _PersistentProperty;
-        //[XafDisplayName("My display name"), ToolTip("My hint message")]
-        //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
-        //[Persistent("DatabaseColumnName"), RuleRequiredField(DefaultContexts.Save)]
-        //public string PersistentProperty {
-        //    get { return _PersistentProperty; }
-        //    set { SetPropertyValue("PersistentProperty", ref _PersistentProperty, value); }
-        //}
+        protected override void OnSaving()
+        {
+            if (instrumentTypeChanged)
+                AddInstrumentSpecItems();
+            base.OnSaving();
+        }
+        protected override void OnSaved()
+        {
+            
+            base.OnSaved();
+        }
+        void AddInstrumentSpecItems()
+        {
+            // If there are existing InstrumentSpecItems, set their IsActive to false.
+            for (int i = 0; i < InstrumentSpecItems.Count; i++)
+            {
+                InstrumentSpecItems[i].IsActive = false;
+            }
 
-        //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
-        //public void ActionMethod() {
-        //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-        //    this.PersistentProperty = "Paid";
-        //}
+            XPQuery<InstrumentSpecItem> instSpecItems = new XPQuery<InstrumentSpecItem>(base.Session);
+            var instrumentSpecItemsForThisInstrument = from i in instSpecItems where i.Instrument.Oid == Oid select i.SpecItem.Oid;
+
+            foreach (var item in InstrumentType.SpecItems)
+            {
+                if (instrumentSpecItemsForThisInstrument.Contains(item.Oid))
+                {
+                    var obj = from i in InstrumentSpecItems
+                              where i.SpecItem.Oid == item.Oid
+                              select i;
+
+                    obj.ToList()[0].IsActive = true;
+                }
+                else
+                {
+                    InstrumentSpecItem instrumentSpecItem = new InstrumentSpecItem(Session)
+                    {
+                        SpecItem = item,
+                        IsActive = true,
+                        RefInstrumentType = instrumentType
+                    };
+                    InstrumentSpecItems.Add(instrumentSpecItem);
+                }
+            }
+
+        }
+
+        
         Project project;
         [Association("Project-Instruments")]
         public Project Project
@@ -94,12 +129,23 @@ namespace LPO.Module.BusinessObjects.Instruments
 
         public string Tag { get => String.Format("{0}{1}-{2}{3}", TagPrefix, TagLetters, TagNumbers, TagSuffix); }
 
+        bool instrumentTypeChanged;
         InstrumentType instrumentType;
         [Persistent(@"instrument_type")]
         public InstrumentType InstrumentType
         {
             get => instrumentType;
-            set => SetPropertyValue(nameof(InstrumentType), ref instrumentType, value);
+            set
+            {
+                if (instrumentType == value)
+                {
+                    return;
+                }
+
+                instrumentTypeChanged = true;
+                SetPropertyValue(nameof(InstrumentType), ref instrumentType, value);
+                RaisePropertyChangedEvent(nameof(InstrumentType));
+            }
         }
 
         InstrumentStatus status;
@@ -143,5 +189,8 @@ namespace LPO.Module.BusinessObjects.Instruments
             get => comments;
             set => SetPropertyValue(nameof(Comments), ref comments, value);
         }
+
+        [Association("Instrument-InstrumentSpecItems")]
+        public XPCollection<InstrumentSpecItem> InstrumentSpecItems => GetCollection<InstrumentSpecItem>(nameof(InstrumentSpecItems));
     }
 }

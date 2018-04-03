@@ -57,6 +57,17 @@
     <SchemaModule Name="SystemModule" Version="17.2.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Instrument_InstrumentSpecItems_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Instrument" Index="-1" Width="176" />
+        <ColumnInfo Id="RefInstrumentType" Index="-1" />
+        <ColumnInfo Id="SpecItem" Index="-1" />
+        <ColumnInfo Id="SpecItem.Category" PropertyName="SpecItem.Category" Index="0" Width="149" IsNewNode="True" />
+        <ColumnInfo Id="SpecItem.Description" PropertyName="SpecItem.Description" Index="1" Width="128" IsNewNode="True" />
+        <ColumnInfo Id="Value" Index="2" />
+        <ColumnInfo Id="IsActive" Index="3" />
+      </Columns>
+    </ListView>
     <ListView Id="InstrumentTypeSpecItem_ListView" AllowEdit="True" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="SpecItem_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
     <ListView Id="SpecItem_PickList_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />

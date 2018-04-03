@@ -127,8 +127,9 @@
     <Compile Include="BusinessObjects\Communication\Origination.cs" />
     <Compile Include="BusinessObjects\Documents\PID.cs" />
     <Compile Include="BusinessObjects\GoBy Documents\GoByDocument.cs" />
-    <Compile Include="BusinessObjects\Instrument Spec\InstrumentTypeSpecItem.cs" />
+    <Compile Include="BusinessObjects\Instrument Spec\AssetType.cs" />
     <Compile Include="BusinessObjects\Instruments\Instrument.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentSpecItem.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentStatus.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentType.cs" />
     <Compile Include="BusinessObjects\Instrument Spec\SpecItemPickListItem.cs" />
@@ -139,6 +140,12 @@
     <Compile Include="BusinessObjects\Projects\ProjectDocument.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectGoByDocument.cs" />
     <Compile Include="BusinessObjects\Projects\TeamMember.cs" />
+    <Compile Include="Controllers\InstrumentViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\InstrumentViewController.Designer.cs">
+      <DependentUpon>InstrumentViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -161,6 +168,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\InstrumentViewController.resx">
+      <DependentUpon>InstrumentViewController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
