@@ -7,6 +7,8 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Xpo;
+using DevExpress.Xpo.DB;
 
 namespace LPO.Win {
     static class Program {
@@ -31,6 +33,8 @@ namespace LPO.Win {
             SecurityAdapterHelper.Enable();
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                // The following line was added by David Landry per the recommendation of XPO Best Practices article, https://www.devexpress.com/Support/Center/Question/Details/A2944/xpo-best-practices
+                //XpoDefault.DataLayer = XpoDefault.GetDataLayer(winApplication.ConnectionString, AutoCreateOption.DatabaseAndSchema);
             }
 #if EASYTEST
             if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
@@ -38,7 +42,7 @@ namespace LPO.Win {
             }
 #endif
 #if DEBUG
-            if(System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
+            if (System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
                 winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             }
 #endif

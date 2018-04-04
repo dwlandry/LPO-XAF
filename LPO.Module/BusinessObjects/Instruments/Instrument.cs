@@ -15,14 +15,17 @@ using LPO.Module.BusinessObjects.Projects;
 using LPO.Module.BusinessObjects.Documents;
 using LPO.Module.BusinessObjects.Instrument_Spec;
 using DevExpress.CodeParser;
+using LPO.Module.BusinessObjects.Components;
 
 namespace LPO.Module.BusinessObjects.Instruments
 {
+    
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     [DefaultProperty("Tag")]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Bottom)]
     [Persistent("inst_instrument")]
+    
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class Instrument : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
@@ -41,20 +44,50 @@ namespace LPO.Module.BusinessObjects.Instruments
                 AddInstrumentSpecItems();
             base.OnSaving();
         }
+
         protected override void OnSaved()
         {
-            
+            //if (instrumentTypeChanged)
+            //    RemoveInactiveSpecItems();
             base.OnSaved();
         }
+
+        void RemoveInactiveSpecItems()
+        {
+            //// If there are existing InstrumentSpecItems, set their IsActive to false.
+            //for (int i = 0; i < InstrumentSpecItems.Count; i--)
+            //{
+            //    InstrumentSpecItem instrumentSpecItem = InstrumentSpecItems[i];
+            //    if (!instrumentSpecItem.IsActive)
+            //        instrumentSpecItem.Delete();
+            //}
+
+            XPQuery<InstrumentSpecItem> instSpecItems = new XPQuery<InstrumentSpecItem>(Session);
+            var inactiveSpecItems = from i in instSpecItems where (i.Instrument.Oid == Oid && i.IsActive == false) select i;
+            var lst = inactiveSpecItems.ToList();
+            foreach (var item in lst)
+            {
+                item.Delete();
+            }
+            //do
+            //{
+            //    lst[0].Delete();
+            //} while (lst.Count()>0);
+            
+        }
+
         void AddInstrumentSpecItems()
         {
+            
             // If there are existing InstrumentSpecItems, set their IsActive to false.
             for (int i = 0; i < InstrumentSpecItems.Count; i++)
             {
                 InstrumentSpecItems[i].IsActive = false;
             }
 
-            XPQuery<InstrumentSpecItem> instSpecItems = new XPQuery<InstrumentSpecItem>(base.Session);
+            if (InstrumentType is null) return;
+
+            XPQuery<InstrumentSpecItem> instSpecItems = new XPQuery<InstrumentSpecItem>(Session);
             var instrumentSpecItemsForThisInstrument = from i in instSpecItems where i.Instrument.Oid == Oid select i.SpecItem.Oid;
 
             foreach (var item in InstrumentType.SpecItems)
@@ -62,8 +95,8 @@ namespace LPO.Module.BusinessObjects.Instruments
                 if (instrumentSpecItemsForThisInstrument.Contains(item.Oid))
                 {
                     var obj = from i in InstrumentSpecItems
-                              where i.SpecItem.Oid == item.Oid
-                              select i;
+                                where i.SpecItem.Oid == item.Oid
+                                select i;
 
                     obj.ToList()[0].IsActive = true;
                 }
@@ -78,7 +111,6 @@ namespace LPO.Module.BusinessObjects.Instruments
                     InstrumentSpecItems.Add(instrumentSpecItem);
                 }
             }
-
         }
 
         
@@ -141,7 +173,7 @@ namespace LPO.Module.BusinessObjects.Instruments
                 {
                     return;
                 }
-
+                
                 instrumentTypeChanged = true;
                 SetPropertyValue(nameof(InstrumentType), ref instrumentType, value);
                 RaisePropertyChangedEvent(nameof(InstrumentType));
@@ -192,5 +224,37 @@ namespace LPO.Module.BusinessObjects.Instruments
 
         [Association("Instrument-InstrumentSpecItems")]
         public XPCollection<InstrumentSpecItem> InstrumentSpecItems => GetCollection<InstrumentSpecItem>(nameof(InstrumentSpecItems));
+
+        [Association("Instrument-InstrumentComponents")]
+        public XPCollection<InstrumentComponent> InstrumentComponents => GetCollection<InstrumentComponent>(nameof(InstrumentComponents));
+
+        //Manufacturer manufacturer;
+        //public Manufacturer Manufacturer
+        //{
+        //    get => manufacturer;
+        //    set => SetPropertyValue(nameof(Manufacturer), ref manufacturer, value);
+        //}
+
+        Components.Component component;
+        //[Association("InstrumentComponent-Instruments")]
+        [XafDisplayName("Component")]
+        public Components.Component SingleComponent
+        {
+            get => component;
+            set => SetPropertyValue(nameof(SingleComponent), ref component, value);
+        }
+        decimal price;
+        public decimal Price
+        {
+            get => price;
+            set => SetPropertyValue(nameof(Price), ref price, value);
+        }
+        Supplier.Supplier supplier;
+        public Supplier.Supplier Supplier
+        {
+            get => supplier;
+            set => SetPropertyValue(nameof(Supplier), ref supplier, value);
+        }
+
     }
 }

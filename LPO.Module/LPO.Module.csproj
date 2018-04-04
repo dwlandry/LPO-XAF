@@ -126,9 +126,13 @@
     <Compile Include="BusinessObjects\Communication\ItemComment.cs" />
     <Compile Include="BusinessObjects\Communication\Origination.cs" />
     <Compile Include="BusinessObjects\Documents\PID.cs" />
+    <Compile Include="BusinessObjects\Components\Component.cs" />
+    <Compile Include="BusinessObjects\Components\ComponentType.cs" />
     <Compile Include="BusinessObjects\GoBy Documents\GoByDocument.cs" />
+    <Compile Include="BusinessObjects\Components\Manufacturer.cs" />
     <Compile Include="BusinessObjects\Instrument Spec\AssetType.cs" />
     <Compile Include="BusinessObjects\Instruments\Instrument.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentComponent.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentSpecItem.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentStatus.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentType.cs" />
@@ -140,6 +144,8 @@
     <Compile Include="BusinessObjects\Projects\ProjectDocument.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectGoByDocument.cs" />
     <Compile Include="BusinessObjects\Projects\TeamMember.cs" />
+    <Compile Include="BusinessObjects\Supplier\Quote.cs" />
+    <Compile Include="BusinessObjects\Supplier\Supplier.cs" />
     <Compile Include="Controllers\InstrumentViewController.cs">
       <SubType>Component</SubType>
     </Compile>
