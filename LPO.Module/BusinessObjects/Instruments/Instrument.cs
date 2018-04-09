@@ -256,5 +256,8 @@ namespace LPO.Module.BusinessObjects.Instruments
             set => SetPropertyValue(nameof(Supplier), ref supplier, value);
         }
 
+        [Association("Instrument-Alarms")]
+        public XPCollection<InstrumentAlarm> Alarms => GetCollection<InstrumentAlarm>(nameof(Alarms));
+
     }
 }

@@ -11,19 +11,18 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
-using LPO.Module.BusinessObjects.Instruments;
 
-namespace LPO.Module.BusinessObjects.Components
+namespace LPO.Module.BusinessObjects.Instruments
 {
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
-    [DefaultProperty("DisplayName")]
+    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    [Persistent("cmpnt_component")]
+    //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class Component : BaseObject
+    public class InstrumentAlarm : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public Component(Session session)
+        public InstrumentAlarm(Session session)
             : base(session)
         {
         }
@@ -46,34 +45,29 @@ namespace LPO.Module.BusinessObjects.Components
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
-        ComponentType componentType;
-        [Association("ComponentType-Components")]
-        public ComponentType ComponentType
+        Instrument instrument;
+        [Association("Instrument-Alarms")]
+        public Instrument Instrument
         {
-            get => componentType;
-            set => SetPropertyValue(nameof(ComponentType), ref componentType, value);
+            get => instrument;
+            set => SetPropertyValue(nameof(Instrument), ref instrument, value);
         }
 
-        Manufacturer manufacturer;
-        [Association("Manufacturer-Components")]
-        public Manufacturer Manufacturer
+        InstrumentAlarmType alarmType;
+        public InstrumentAlarmType AlarmType
         {
-            get => manufacturer;
-            set => SetPropertyValue(nameof(Manufacturer), ref manufacturer, value);
+            get => alarmType;
+            set => SetPropertyValue(nameof(AlarmType), ref alarmType, value);
         }
 
-        string modelNumber;
+        string value;
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string ModelNumber
+        public string Value
         {
-            get => modelNumber;
-            set => SetPropertyValue(nameof(ModelNumber), ref modelNumber, value);
+            get => value;
+            set => SetPropertyValue(nameof(Value), ref value, value);
         }
 
-        [Association("Component-InstrumentComponents")]
-        public XPCollection<InstrumentComponent> InstrumentComponents => GetCollection<InstrumentComponent>(nameof(InstrumentComponents));
 
-        [XafDisplayName("Component")]
-        public string DisplayName => manufacturer is null ? string.Format("[MANUFACTURER]: {0}", modelNumber) : string.Format("{0}: {1}", manufacturer.Name, modelNumber);
     }
 }

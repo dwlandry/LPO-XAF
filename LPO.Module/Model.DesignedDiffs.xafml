@@ -32,7 +32,6 @@
           <Item Id="Instrument_ListView" Removed="True" />
           <Item Id="InstrumentStatus_ListView" Removed="True" />
           <Item Id="InstrumentType_ListView" Removed="True" />
-          <Item Id="InstrumentTypeSpecItem_ListView" Removed="True" />
           <Item Id="ItemComment_ListView" Removed="True" />
           <Item Id="Origination_ListView" Removed="True" />
           <Item Id="Project_ListView" Removed="True" />
@@ -57,6 +56,7 @@
     <SchemaModule Name="SystemModule" Version="17.2.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="CommunicationItem_ListView" AutoExpandAllGroups="True" AllowEdit="True" AllowLink="False" AllowUnlink="False" FreezeColumnIndices="False" NewItemRowPosition="Bottom" />
     <ListView Id="Instrument_InstrumentSpecItems_ListView" AllowEdit="True">
       <Columns>
         <ColumnInfo Id="Instrument" Index="-1" Width="176" />
@@ -64,11 +64,10 @@
         <ColumnInfo Id="SpecItem" Index="-1" />
         <ColumnInfo Id="SpecItem.Category" PropertyName="SpecItem.Category" Index="0" Width="149" IsNewNode="True" />
         <ColumnInfo Id="SpecItem.Description" PropertyName="SpecItem.Description" Index="1" Width="128" IsNewNode="True" />
-        <ColumnInfo Id="Value" Index="2" />
         <ColumnInfo Id="IsActive" Index="3" />
       </Columns>
     </ListView>
-    <ListView Id="InstrumentTypeSpecItem_ListView" AllowEdit="True" MasterDetailMode="ListViewAndDetailView" />
+    <ListView Id="Project_CommunicationItems_ListView" AllowEdit="True" AllowLink="False" AllowUnlink="False" AutoExpandAllGroups="True" NewItemRowPosition="Bottom" />
     <ListView Id="SpecItem_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
     <ListView Id="SpecItem_PickList_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
   </Views>

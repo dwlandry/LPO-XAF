@@ -17,6 +17,7 @@ namespace LPO.Win {
         /// </summary>
         [STAThread]
         static void Main() {
+            
 #if EASYTEST
             DevExpress.ExpressApp.Win.EasyTest.EasyTestRemotingRegistration.Register();
 #endif
@@ -34,7 +35,7 @@ namespace LPO.Win {
             if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 // The following line was added by David Landry per the recommendation of XPO Best Practices article, https://www.devexpress.com/Support/Center/Question/Details/A2944/xpo-best-practices
-                //XpoDefault.DataLayer = XpoDefault.GetDataLayer(winApplication.ConnectionString, AutoCreateOption.DatabaseAndSchema);
+                InitializeDAL(winApplication.ConnectionString);
             }
 #if EASYTEST
             if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
@@ -53,6 +54,22 @@ namespace LPO.Win {
             catch(Exception e) {
                 winApplication.HandleException(e);
             }
+        }
+
+        /// <summary>
+        /// To improve web application performance, create a single data access layer 
+        /// (DAL for short) to connect to a data store and share it across multiple units of work (sessions).
+        /// 
+        /// References:
+        /// https://documentation.devexpress.com/CoreLibraries/2260/DevExpress-ORM-Tool/Getting-Started/Tutorial-4-A-Windows-Forms-Application-for-Data-Editing
+        /// https://www.devexpress.com/Support/Center/Question/Details/A2944/xpo-best-practices
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="connectionString"></param>
+        static void InitializeDAL(string connectionString)
+        {
+            XpoDefault.DataLayer = XpoDefault.GetDataLayer(AccessConnectionProvider.GetConnectionString(@connectionString), AutoCreateOption.DatabaseAndSchema);
         }
     }
 }

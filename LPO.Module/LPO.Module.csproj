@@ -132,6 +132,8 @@
     <Compile Include="BusinessObjects\Components\Manufacturer.cs" />
     <Compile Include="BusinessObjects\Instrument Spec\AssetType.cs" />
     <Compile Include="BusinessObjects\Instruments\Instrument.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentAlarm.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentAlarmType.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentComponent.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentSpecItem.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentStatus.cs" />
@@ -146,6 +148,12 @@
     <Compile Include="BusinessObjects\Projects\TeamMember.cs" />
     <Compile Include="BusinessObjects\Supplier\Quote.cs" />
     <Compile Include="BusinessObjects\Supplier\Supplier.cs" />
+    <Compile Include="Controllers\InstrumentSpecItemsListViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\InstrumentSpecItemsListViewController.Designer.cs">
+      <DependentUpon>InstrumentSpecItemsListViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\InstrumentViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -174,6 +182,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\InstrumentSpecItemsListViewController.resx">
+      <DependentUpon>InstrumentSpecItemsListViewController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\InstrumentViewController.resx">
       <DependentUpon>InstrumentViewController.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +249,14 @@
     <EmbeddedResource Include="Images\BO_CommunicationComment_48x48.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Projects">
+        <Items>
+          <Item Id="ProjectCardView" ViewId="ProjectCardView" Caption="Project Card View" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <SchemaModules>
     <SchemaModule Name="SchedulerModuleBase" Version="17.2.7.0" IsNewNode="True" />
     <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.2.7.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="17.2.7.0" IsNewNode="True" />
     <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.7.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <DashboardView Id="ProjectCardView" IsNewNode="True">
+      <Items IsNewNode="True">
+        <ControlDetailItem Id="ProjectCardView" ControlTypeName="LPO.Module.Win.Controllers.UserControl1" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" ShowCaption="False" Caption="Main(1)" Index="0" RelativeSize="100" TextAlignMode="AlignWithChildren" IsNewNode="True">
+          <LayoutItem Id="ProjectCardView" ViewItem="ProjectCardView" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+  </Views>
 </Application>

@@ -36,7 +36,9 @@ namespace LPO.Module.BusinessObjects.Projects
         {
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
+            IsActive = true;
         }
+
         string projectNumber;
         [Size(30)]
         public string ProjectNumber
@@ -74,6 +76,13 @@ namespace LPO.Module.BusinessObjects.Projects
         {
             get => projectFolder;
             set => SetPropertyValue(nameof(ProjectFolder), ref projectFolder, value);
+        }
+
+        bool isActive;
+        public bool IsActive
+        {
+            get => isActive;
+            set => SetPropertyValue(nameof(IsActive), ref isActive, value);
         }
 
         [Association("Project-TeamMembers")]
