@@ -235,19 +235,41 @@ namespace LPO.Module.BusinessObjects.Instruments
         //    set => SetPropertyValue(nameof(Manufacturer), ref manufacturer, value);
         //}
 
-        Components.Component component;
+        //Components.Component component;
         //[Association("InstrumentComponent-Instruments")]
         [XafDisplayName("Component")]
-        public Components.Component SingleComponent
+        //[EditorAlias("MemoEdit")]
+        public string Component
         {
-            get => component;
-            set => SetPropertyValue(nameof(SingleComponent), ref component, value);
+            get
+            {
+                StringBuilder componentBuilder = new StringBuilder();
+
+                foreach (InstrumentComponent item in InstrumentComponents)
+                {
+                    if (item.Component != null)
+                        componentBuilder.Append(componentBuilder.Length == 0 ? item.Component.DisplayName + ", " : "\n" + item.Component.DisplayName + ", ");
+
+                }
+
+                var result = componentBuilder.ToString();
+                return result.Length>2 ? result.Remove(result.Length-2) : "";
+            }
+            //set => SetPropertyValue(nameof(SingleComponent), ref component, value);
         }
-        decimal price;
+        //decimal price;
         public decimal Price
         {
-            get => price;
-            set => SetPropertyValue(nameof(Price), ref price, value);
+            get
+            {
+                decimal price = 0;
+                foreach (var component in InstrumentComponents)
+                {
+                    price += component.Price;
+                }
+                return price;
+            }
+            //set => SetPropertyValue(nameof(Price), ref price, value);
         }
         Supplier.Supplier supplier;
         public Supplier.Supplier Supplier

@@ -60,6 +60,7 @@
     <Reference Include="DevExpress.ExpressApp.Security.Xpo.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Validation.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -121,13 +122,14 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\Client\Client.cs" />
     <Compile Include="BusinessObjects\Client\ClientDocument.cs" />
-    <Compile Include="BusinessObjects\Communication\Category.cs" />
+    <Compile Include="BusinessObjects\Communication\CommunicationCategory.cs" />
     <Compile Include="BusinessObjects\Communication\CommunicationItem.cs" />
     <Compile Include="BusinessObjects\Communication\ItemComment.cs" />
     <Compile Include="BusinessObjects\Communication\Origination.cs" />
     <Compile Include="BusinessObjects\Documents\PID.cs" />
     <Compile Include="BusinessObjects\Components\Component.cs" />
     <Compile Include="BusinessObjects\Components\ComponentType.cs" />
+    <Compile Include="BusinessObjects\Estimating\Category.cs" />
     <Compile Include="BusinessObjects\GoBy Documents\GoByDocument.cs" />
     <Compile Include="BusinessObjects\Components\Manufacturer.cs" />
     <Compile Include="BusinessObjects\Instrument Spec\AssetType.cs" />
@@ -249,14 +251,6 @@
     <EmbeddedResource Include="Images\BO_CommunicationComment_48x48.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="UnusableNodes.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UnusableNodes1.xml">
-      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>

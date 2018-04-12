@@ -74,6 +74,6 @@ namespace LPO.Module.BusinessObjects.Components
         public XPCollection<InstrumentComponent> InstrumentComponents => GetCollection<InstrumentComponent>(nameof(InstrumentComponents));
 
         [XafDisplayName("Component")]
-        public string DisplayName => manufacturer is null ? string.Format("[MANUFACTURER]: {0}", modelNumber) : string.Format("{0}: {1}", manufacturer.Name, modelNumber);
+        public string DisplayName => componentType is null ? string.Format("[COMPONENT TYPE]: {0}", modelNumber) : string.Format("{0}: {1}", componentType.Name, modelNumber);
     }
 }

@@ -36,6 +36,7 @@
             this.reportHeaderBand1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.groupHeaderBand1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
             this.groupHeaderBand2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.groupHeaderBand3 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.detailBand1 = new DevExpress.XtraReports.UI.DetailBand();
@@ -68,12 +69,13 @@
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.collectionDataSourceCommunicationItems = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.formattingRuleNoComments = new DevExpress.XtraReports.UI.FormattingRule();
             this.Comment = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailDataDescription = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
             this.paramClosedStatus = new DevExpress.XtraReports.Parameters.Parameter();
-            this.collectionDataSourceCommunicationItems = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
+            this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.collectionDataSourceCommunicationItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -138,11 +140,35 @@
             this.groupHeaderBand1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("Project.ProjectNumber", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.groupHeaderBand1.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.groupHeaderBand1.HeightF = 25F;
+            this.groupHeaderBand1.HeightF = 28.125F;
             this.groupHeaderBand1.Level = 1;
             this.groupHeaderBand1.Name = "groupHeaderBand1";
             this.groupHeaderBand1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBandExceptFirstEntry;
             this.groupHeaderBand1.RepeatEveryPage = true;
+            // 
+            // xrLabel21
+            // 
+            this.xrLabel21.BorderColor = System.Drawing.Color.White;
+            this.xrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrLabel21.BorderWidth = 2F;
+            this.xrLabel21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Upper(FormatString(\'({0}) {1} - {2}\',[Project].[Client].[Name], [Project].[Projec" +
+                    "tNumber], [Project].[ProjectDescription]))")});
+            this.xrLabel21.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(6.00001F, 0F);
+            this.xrLabel21.Name = "xrLabel21";
+            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel21.SizeF = new System.Drawing.SizeF(638.0001F, 25F);
+            this.xrLabel21.StylePriority.UseBackColor = false;
+            this.xrLabel21.StylePriority.UseBorderColor = false;
+            this.xrLabel21.StylePriority.UseBorders = false;
+            this.xrLabel21.StylePriority.UseBorderWidth = false;
+            this.xrLabel21.StylePriority.UseFont = false;
+            this.xrLabel21.StylePriority.UseForeColor = false;
+            this.xrLabel21.StylePriority.UsePadding = false;
+            this.xrLabel21.StylePriority.UseTextAlignment = false;
+            this.xrLabel21.Text = "xrTableCell2";
+            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // groupHeaderBand2
             // 
@@ -584,6 +610,12 @@
             this.xrLabel3.Text = "xrLabel3";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // collectionDataSourceCommunicationItems
+            // 
+            this.collectionDataSourceCommunicationItems.Name = "collectionDataSourceCommunicationItems";
+            this.collectionDataSourceCommunicationItems.ObjectTypeName = "LPO.Module.BusinessObjects.Communication.CommunicationItem";
+            this.collectionDataSourceCommunicationItems.TopReturnedRecords = 0;
+            // 
             // formattingRuleNoComments
             // 
             this.formattingRuleNoComments.Formatting.Visible = DevExpress.Utils.DefaultBoolean.False;
@@ -604,30 +636,6 @@
             this.DetailDataDescription.Name = "DetailDataDescription";
             this.DetailDataDescription.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             // 
-            // xrLabel21
-            // 
-            this.xrLabel21.BorderColor = System.Drawing.Color.White;
-            this.xrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrLabel21.BorderWidth = 2F;
-            this.xrLabel21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Upper(FormatString(\'({0}) {1} - {2}\',[Project].[Client].[Name], [Project].[Projec" +
-                    "tNumber], [Project].[ProjectDescription]))")});
-            this.xrLabel21.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(6.00001F, 0F);
-            this.xrLabel21.Name = "xrLabel21";
-            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel21.SizeF = new System.Drawing.SizeF(638.0001F, 25F);
-            this.xrLabel21.StylePriority.UseBackColor = false;
-            this.xrLabel21.StylePriority.UseBorderColor = false;
-            this.xrLabel21.StylePriority.UseBorders = false;
-            this.xrLabel21.StylePriority.UseBorderWidth = false;
-            this.xrLabel21.StylePriority.UseFont = false;
-            this.xrLabel21.StylePriority.UseForeColor = false;
-            this.xrLabel21.StylePriority.UsePadding = false;
-            this.xrLabel21.StylePriority.UseTextAlignment = false;
-            this.xrLabel21.Text = "xrTableCell2";
-            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // paramClosedStatus
             // 
             this.paramClosedStatus.Description = "Filter";
@@ -638,11 +646,34 @@
             this.paramClosedStatus.Name = "paramClosedStatus";
             this.paramClosedStatus.ValueInfo = "Open Items";
             // 
-            // collectionDataSourceCommunicationItems
+            // GroupHeader1
             // 
-            this.collectionDataSourceCommunicationItems.Name = "collectionDataSourceCommunicationItems";
-            this.collectionDataSourceCommunicationItems.ObjectTypeName = "LPO.Module.BusinessObjects.Communication.CommunicationItem";
-            this.collectionDataSourceCommunicationItems.TopReturnedRecords = 0;
+            this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel17});
+            this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+            new DevExpress.XtraReports.UI.GroupField("CommunicationCategory.Name", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeader1.HeightF = 22.29166F;
+            this.GroupHeader1.KeepTogether = true;
+            this.GroupHeader1.Name = "GroupHeader1";
+            this.GroupHeader1.RepeatEveryPage = true;
+            // 
+            // xrLabel17
+            // 
+            this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CommunicationCategory].[Name]")});
+            this.xrLabel17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel17.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel17.Name = "xrLabel17";
+            this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel17.SizeF = new System.Drawing.SizeF(473.9825F, 22.29166F);
+            this.xrLabel17.StylePriority.UseBorders = false;
+            this.xrLabel17.StylePriority.UseFont = false;
+            this.xrLabel17.StylePriority.UseForeColor = false;
+            this.xrLabel17.StylePriority.UsePadding = false;
+            this.xrLabel17.StylePriority.UseTextAlignment = false;
+            this.xrLabel17.Text = "xrTableCell16";
             // 
             // ProjectCommunicationReport
             // 
@@ -655,7 +686,8 @@
             this.groupHeaderBand3,
             this.detailBand1,
             this.groupFooterBand1,
-            this.DetailReport});
+            this.DetailReport,
+            this.GroupHeader1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.collectionDataSourceCommunicationItems});
             this.DataSource = this.collectionDataSourceCommunicationItems;
@@ -728,5 +760,7 @@
         private DevExpress.XtraReports.UI.XRControlStyle DetailDataDescription;
         private DevExpress.XtraReports.UI.XRLabel xrLabel21;
         private DevExpress.XtraReports.Parameters.Parameter paramClosedStatus;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel17;
     }
 }

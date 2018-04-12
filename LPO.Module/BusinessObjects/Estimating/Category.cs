@@ -11,40 +11,37 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using DevExpress.Persistent.Base.General;
 
-namespace LPO.Module.BusinessObjects.Communication
+namespace LPO.Module.BusinessObjects.Estimating
 {
-    [DefaultClassOptions]
+    //[DefaultClassOptions]
+    [NavigationItem]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    [Persistent(@"comm_communication-category")]
-    public class Category : BaseObject
+    public abstract class Category : BaseObject, ITreeNode
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
         public Category(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        }
+            : base(session) { }
+
+        protected abstract ITreeNode Parent { get; }
+        protected abstract IBindingList Children { get; }
+
         string name;
-        [Indexed(Name = @"comm_tCommunicationTypeSubject_Topic")]
-        [Size(50)]
-        [Persistent(@"category_name")]
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
         public string Name
         {
             get => name;
             set => SetPropertyValue(nameof(Name), ref name, value);
         }
 
-        [Association("Category-CommunicationItems")]
-        public XPCollection<CommunicationItem> Items => GetCollection<CommunicationItem>(nameof(Items));
-
-        
+        #region ITreeNode
+        IBindingList ITreeNode.Children => Children;
+        string ITreeNode.Name => Name;
+        ITreeNode ITreeNode.Parent => Parent;
+        #endregion
     }
 }

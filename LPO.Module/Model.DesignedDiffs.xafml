@@ -44,7 +44,6 @@
           <Item Id="Instrument_ListView" ViewId="Instrument_ListView" ObjectKey="" Caption="Instruments" IsNewNode="True" />
           <Item Id="InstrumentStatus_ListView" ViewId="InstrumentStatus_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="InstrumentType_ListView" ViewId="InstrumentType_ListView" ObjectKey="" Caption="Instrument Types" IsNewNode="True" />
-          <Item Id="InstrumentTypeSpecItem_ListView" ViewId="InstrumentTypeSpecItem_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -57,6 +56,7 @@
   </SchemaModules>
   <Views>
     <ListView Id="CommunicationItem_ListView" AutoExpandAllGroups="True" AllowEdit="True" AllowLink="False" AllowUnlink="False" FreezeColumnIndices="False" NewItemRowPosition="Bottom" />
+    <ListView Id="Instrument_InstrumentComponents_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
     <ListView Id="Instrument_InstrumentSpecItems_ListView" AllowEdit="True">
       <Columns>
         <ColumnInfo Id="Instrument" Index="-1" Width="176" />
@@ -65,6 +65,24 @@
         <ColumnInfo Id="SpecItem.Category" PropertyName="SpecItem.Category" Index="0" Width="149" IsNewNode="True" />
         <ColumnInfo Id="SpecItem.Description" PropertyName="SpecItem.Description" Index="1" Width="128" IsNewNode="True" />
         <ColumnInfo Id="IsActive" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="InstrumentComponent_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="InstrumentComponent">
+              <LayoutGroup Id="InstrumentComponent_col1">
+                <LayoutItem Id="Component" SizeConstraintsType="Default" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="InstrumentType_SpecItems_ListView">
+      <Columns>
+        <ColumnInfo Id="Description" SortIndex="-1" SortOrder="None" />
       </Columns>
     </ListView>
     <ListView Id="Project_CommunicationItems_ListView" AllowEdit="True" AllowLink="False" AllowUnlink="False" AutoExpandAllGroups="True" NewItemRowPosition="Bottom" />

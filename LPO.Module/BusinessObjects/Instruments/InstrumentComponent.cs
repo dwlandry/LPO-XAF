@@ -88,5 +88,13 @@ namespace LPO.Module.BusinessObjects.Instruments
             get => quote;
             set => SetPropertyValue(nameof(Quote), ref quote, value);
         }
+
+        string comments;
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Comments
+        {
+            get => comments;
+            set => SetPropertyValue(nameof(Comments), ref comments, value);
+        }
     }
 }

@@ -92,10 +92,10 @@ namespace LPO.Module.BusinessObjects.Communication
             set => SetPropertyValue(nameof(DateRequired), ref dateRequired, value);
         }
 
-        Category communicationCategory;
+        CommunicationCategory communicationCategory;
         [Persistent(@"communication_category")]
         [Association("Category-CommunicationItems")]
-        public Category CommunicationCategory
+        public CommunicationCategory CommunicationCategory
         {
             get => communicationCategory;
             set => SetPropertyValue(nameof(CommunicationCategory), ref communicationCategory, value);
