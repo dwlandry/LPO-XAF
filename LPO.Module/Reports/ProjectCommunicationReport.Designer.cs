@@ -69,13 +69,13 @@
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.collectionDataSourceCommunicationItems = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             this.formattingRuleNoComments = new DevExpress.XtraReports.UI.FormattingRule();
             this.Comment = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailDataDescription = new DevExpress.XtraReports.UI.XRControlStyle();
             this.paramClosedStatus = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.collectionDataSourceCommunicationItems = new DevExpress.Persistent.Base.ReportsV2.CollectionDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.collectionDataSourceCommunicationItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -204,6 +204,7 @@
             this.xrLabel16,
             this.xrLabel18});
             this.detailBand1.HeightF = 67.70834F;
+            this.detailBand1.KeepTogetherWithDetailReports = true;
             this.detailBand1.Name = "detailBand1";
             // 
             // xrLabel20
@@ -610,12 +611,6 @@
             this.xrLabel3.Text = "xrLabel3";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // collectionDataSourceCommunicationItems
-            // 
-            this.collectionDataSourceCommunicationItems.Name = "collectionDataSourceCommunicationItems";
-            this.collectionDataSourceCommunicationItems.ObjectTypeName = "LPO.Module.BusinessObjects.Communication.CommunicationItem";
-            this.collectionDataSourceCommunicationItems.TopReturnedRecords = 0;
-            // 
             // formattingRuleNoComments
             // 
             this.formattingRuleNoComments.Formatting.Visible = DevExpress.Utils.DefaultBoolean.False;
@@ -675,6 +670,12 @@
             this.xrLabel17.StylePriority.UseTextAlignment = false;
             this.xrLabel17.Text = "xrTableCell16";
             // 
+            // collectionDataSourceCommunicationItems
+            // 
+            this.collectionDataSourceCommunicationItems.Name = "collectionDataSourceCommunicationItems";
+            this.collectionDataSourceCommunicationItems.ObjectTypeName = "LPO.Module.BusinessObjects.Communication.CommunicationItem";
+            this.collectionDataSourceCommunicationItems.TopReturnedRecords = 0;
+            // 
             // ProjectCommunicationReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -693,7 +694,7 @@
             this.DataSource = this.collectionDataSourceCommunicationItems;
             this.FilterString = "[Project.IsActive] = True And Iif(?paramClosedStatus = \'Closed Items\', [DateClose" +
     "d] Is Not Null, Iif(?paramClosedStatus = \'Open Items\', [DateClosed] Is Null, Tru" +
-    "e))";
+    "e)) And [IncludeInReport] = True";
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.paramClosedStatus});
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
