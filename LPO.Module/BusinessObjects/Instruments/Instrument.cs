@@ -196,6 +196,7 @@ namespace LPO.Module.BusinessObjects.Instruments
 
         PID pID;
         [Association("PID-Instruments")]
+        [DataSourceProperty("Project.PIDs")]
         public PID PID
         {
             get => pID;
