@@ -15,6 +15,7 @@ using LPO.Module.BusinessObjects.Communication;
 using LPO.Module.BusinessObjects.Project_Schedule;
 using FileSystemData.BusinessObjects;
 using LPO.Module.BusinessObjects.Instruments;
+using LPO.Module.BusinessObjects.Motors;
 using LPO.Module.BusinessObjects.Documents;
 
 namespace LPO.Module.BusinessObjects.Projects
@@ -102,6 +103,13 @@ namespace LPO.Module.BusinessObjects.Projects
         [Association("Project-PIDs")]
         public XPCollection<PID> PIDs => GetCollection<PID>(nameof(PIDs));
 
+        [Association("Project-Parties")]
+        public XPCollection<ProjectParty> Parties => GetCollection<ProjectParty>(nameof(Parties));
 
+        [Association("Project-ControlSystems")]
+        public XPCollection<ProjectControlSystem> ControlSystems => GetCollection<ProjectControlSystem>(nameof(ControlSystems));
+
+        [Association("Project-Motors")]
+        public XPCollection<Motor> Motors => GetCollection<Motor>(nameof(Motors));
     }
 }

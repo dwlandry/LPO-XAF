@@ -14,6 +14,7 @@ using DevExpress.Persistent.Validation;
 using FileSystemData.BusinessObjects;
 using LPO.Module.BusinessObjects.Projects;
 using LPO.Module.BusinessObjects.Instruments;
+using LPO.Module.BusinessObjects.Motors;
 
 namespace LPO.Module.BusinessObjects.Documents
 {
@@ -91,5 +92,10 @@ namespace LPO.Module.BusinessObjects.Documents
         public XPCollection<Instrument> Instruments => GetCollection<Instrument>(nameof(Instruments));
 
         public string DisplayName => !string.IsNullOrEmpty(Rev) ? string.Format("{0}_R{1}", DrawingNumber, Rev) : DrawingNumber;
+
+        [Association("PID-Motors")]
+        public XPCollection<Motor> Motors => GetCollection<Motor>(nameof(Motors));
+
+
     }
 }

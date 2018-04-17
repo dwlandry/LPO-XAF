@@ -282,5 +282,23 @@ namespace LPO.Module.BusinessObjects.Instruments
         [Association("Instrument-Alarms")]
         public XPCollection<InstrumentAlarm> Alarms => GetCollection<InstrumentAlarm>(nameof(Alarms));
 
+
+        ProjectParty responsibleParty;
+        [DataSourceProperty("Project.Parties")]
+        public ProjectParty ResponsibleParty
+        {
+            get => responsibleParty;
+            set => SetPropertyValue(nameof(ResponsibleParty), ref responsibleParty, value);
+        }
+
+        ProjectControlSystem controlSystem;
+        [Association("ProjectControlSystem-Instruments")]
+        [DataSourceProperty("Project.ControlSystems")]
+        public ProjectControlSystem ControlSystem
+        {
+            get => controlSystem;
+            set => SetPropertyValue(nameof(ControlSystem), ref controlSystem, value);
+        }
+
     }
 }
