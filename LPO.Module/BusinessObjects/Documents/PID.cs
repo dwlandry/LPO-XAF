@@ -21,7 +21,7 @@ namespace LPO.Module.BusinessObjects.Documents
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     [DefaultProperty("DisplayName")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     [FileAttachment("File")]
@@ -96,6 +96,12 @@ namespace LPO.Module.BusinessObjects.Documents
         [Association("PID-Motors")]
         public XPCollection<Motor> Motors => GetCollection<Motor>(nameof(Motors));
 
-
+        ProjectParty responsibleParty;
+        [DataSourceProperty("Project.Parties")]
+        public ProjectParty ResponsibleParty
+        {
+            get => responsibleParty;
+            set => SetPropertyValue(nameof(ResponsibleParty), ref responsibleParty, value);
+        }
     }
 }
