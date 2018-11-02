@@ -17,6 +17,7 @@ using FileSystemData.BusinessObjects;
 using LPO.Module.BusinessObjects.Instruments;
 using LPO.Module.BusinessObjects.Motors;
 using LPO.Module.BusinessObjects.Documents;
+using DevExpress.ExpressApp.Editors;
 
 namespace LPO.Module.BusinessObjects.Projects
 {
@@ -84,6 +85,22 @@ namespace LPO.Module.BusinessObjects.Projects
         {
             get => isActive;
             set => SetPropertyValue(nameof(IsActive), ref isActive, value);
+        }
+
+        string clientProjectNumber;
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string ClientProjectNumber
+        {
+            get => clientProjectNumber;
+            set => SetPropertyValue(nameof(ClientProjectNumber), ref clientProjectNumber, value);
+        }
+
+        byte[] scopeOfWork;
+        [EditorAlias(EditorAliases.RichTextPropertyEditor)]
+        public byte[] ScopeOfWork
+        {
+            get => scopeOfWork;
+            set => SetPropertyValue(nameof(ScopeOfWork), ref scopeOfWork, value);
         }
 
         [Association("Project-TeamMembers")]

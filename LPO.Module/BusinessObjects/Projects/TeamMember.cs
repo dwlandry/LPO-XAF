@@ -17,7 +17,7 @@ namespace LPO.Module.BusinessObjects.Projects
     [DefaultClassOptions]
     [ImageName("BO_Person")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class TeamMember : Person
@@ -29,6 +29,7 @@ namespace LPO.Module.BusinessObjects.Projects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            fromDate = DateTime.Today;
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
         string company;
@@ -44,6 +45,18 @@ namespace LPO.Module.BusinessObjects.Projects
         {
             get => projectRole;
             set => SetPropertyValue(nameof(ProjectRole), ref projectRole, value);
+        }
+        DateTime fromDate;
+        public DateTime FromDate
+        {
+            get => fromDate;
+            set => SetPropertyValue(nameof(FromDate), ref fromDate, value);
+        }
+        DateTime thruDate;
+        public DateTime ThruDate
+        {
+            get => thruDate;
+            set => SetPropertyValue(nameof(ThruDate), ref thruDate, value);
         }
 
         //Project project;

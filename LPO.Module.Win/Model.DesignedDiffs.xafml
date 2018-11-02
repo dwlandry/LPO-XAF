@@ -10,12 +10,69 @@
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SchedulerModuleBase" Version="17.2.7.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerWindowsFormsModule" Version="17.2.7.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="17.2.7.0" IsNewNode="True" />
-    <SchemaModule Name="SystemWindowsFormsModule" Version="17.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="18.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="18.1.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <DetailView Id="Project_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="23.937007874015748">
+            <LayoutGroup Id="Project" RelativeSize="100">
+              <LayoutGroup Id="Project_col1" RelativeSize="49.915966386554622">
+                <LayoutItem Id="ProjectNumber" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="ProjectDescription" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Client" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="ProjectFolder" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+              <LayoutGroup Id="Project_col2" RelativeSize="50.084033613445378">
+                <LayoutItem Id="IsActive" RelativeSize="25.892857142857142" />
+                <LayoutItem Id="ClientProjectNumber" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="DisplayName" RelativeSize="52.678571428571431" Index="2" />
+                <LayoutItem Id="ScopeOfWork" RelativeSize="21.428571428571427" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="76.062992125984252" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Item1" ShowCaption="True" Caption="SOW" CaptionLocation="Top" Index="0" RelativeSize="100" TextAlignMode="AlignWithChildren" IsNewNode="True">
+              <LayoutItem Id="ScopeOfWork" ViewItem="ScopeOfWork" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="CommunicationItems" ShowCaption="True" Caption="Communication Items" TextAlignMode="AlignWithChildren" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="CommunicationItems" TextAlignMode="AutoSize" ViewItem="CommunicationItems" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ProjectEvents" ShowCaption="True" Caption="Project Events" TextAlignMode="AlignWithChildren" Index="2" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="ProjectEvents" TextAlignMode="AutoSize" ViewItem="ProjectEvents" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="TeamMembers" ShowCaption="True" Caption="Team Members" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="TeamMembers" TextAlignMode="AutoSize" ViewItem="TeamMembers" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="GoBys" ShowCaption="True" Caption="Go Bys" TextAlignMode="AlignWithChildren" Index="4" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="GoBys" TextAlignMode="AutoSize" ViewItem="GoBys" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Documents" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="5" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Documents" TextAlignMode="AutoSize" ViewItem="Documents" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Instruments" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="6" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Instruments" TextAlignMode="AutoSize" ViewItem="Instruments" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="PIDs" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="7" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="PIDs" TextAlignMode="AutoSize" ViewItem="PIDs" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Parties" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="8" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Parties" TextAlignMode="AutoSize" ViewItem="Parties" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="ControlSystems" ShowCaption="True" Caption="Control Systems" TextAlignMode="AlignWithChildren" Index="9" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="ControlSystems" TextAlignMode="AutoSize" ViewItem="ControlSystems" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Motors" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="10" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Motors" TextAlignMode="AutoSize" ViewItem="Motors" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DashboardView Id="ProjectCardView" IsNewNode="True">
       <Items IsNewNode="True">
         <ControlDetailItem Id="ProjectCardView" ControlTypeName="LPO.Module.Win.Controllers.UserControl1" IsNewNode="True" />
