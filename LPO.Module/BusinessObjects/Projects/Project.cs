@@ -1,23 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using DevExpress.Xpo;
-using DevExpress.ExpressApp;
-using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
-using DevExpress.Data.Filtering;
+﻿using DevExpress.ExpressApp.Editors;
 using DevExpress.Persistent.Base;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
-using DevExpress.Persistent.Validation;
+using DevExpress.Xpo;
 using LPO.Module.BusinessObjects.Communication;
-using LPO.Module.BusinessObjects.Project_Schedule;
-using FileSystemData.BusinessObjects;
+using LPO.Module.BusinessObjects.Documents;
 using LPO.Module.BusinessObjects.Instruments;
 using LPO.Module.BusinessObjects.Motors;
-using LPO.Module.BusinessObjects.Documents;
-using DevExpress.ExpressApp.Editors;
+using LPO.Module.BusinessObjects.Project_Schedule;
+using System;
+using System.ComponentModel;
+using System.Linq;
 
 namespace LPO.Module.BusinessObjects.Projects
 {
