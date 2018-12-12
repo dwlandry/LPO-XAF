@@ -87,7 +87,13 @@
     </ListView>
     <ListView Id="Project_CommunicationItems_ListView" AllowEdit="True" AllowLink="False" AllowUnlink="False" AutoExpandAllGroups="True" NewItemRowPosition="Bottom" />
     <ListView Id="Project_ListView" AllowDelete="False" MasterDetailMode="ListViewAndDetailView" />
-    <ListView Id="Project_TeamMembers_ListView" AutoExpandAllGroups="True" />
+    <ListView Id="Project_TeamMembers_ListView" AutoExpandAllGroups="True">
+      <Columns>
+        <ColumnInfo Id="AllPhoneNumbers" Index="3" />
+        <ColumnInfo Id="FromDate" Index="4" />
+        <ColumnInfo Id="ThruDate" Index="5" />
+      </Columns>
+    </ListView>
     <ListView Id="SpecItem_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
     <ListView Id="SpecItem_PickList_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
   </Views>

@@ -1,4 +1,10 @@
-﻿using DevExpress.ExpressApp;
+﻿//-----------------------------------------------------------------------
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module\BusinessObjects\Projects\TeamMember.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
@@ -52,13 +58,8 @@ namespace LPO.Module.BusinessObjects.Projects
             set => SetPropertyValue(nameof(ThruDate), ref thruDate, value);
         }
 
-        //Project project;
-        //[Association("Project-TeamMembers")]
-        //public Project Project
-        //{
-        //    get => project;
-        //    set => SetPropertyValue(nameof(Project), ref project, value);
-        //}
+        [DisplayName("Phone Numbers")]
+        public string AllPhoneNumbers => string.Join("; ", PhoneNumbers.Select(x => $"({x.PhoneType}) {x.Number}"));
 
         [Association("Project-TeamMembers")]
         public XPCollection<Project> Projects => GetCollection<Project>(nameof(Projects));
