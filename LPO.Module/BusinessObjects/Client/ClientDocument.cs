@@ -40,7 +40,7 @@ namespace LPO.Module.BusinessObjects.Client
 
 
         string description;
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        [Size(255)]
         public string Description
         {
             get => description;
