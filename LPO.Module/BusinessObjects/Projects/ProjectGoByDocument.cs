@@ -1,4 +1,10 @@
-﻿using DevExpress.Persistent.Base;
+﻿//-----------------------------------------------------------------------
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module\BusinessObjects\Projects\ProjectGoByDocument.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using FileSystemData.BusinessObjects;
@@ -9,6 +15,7 @@ namespace LPO.Module.BusinessObjects.Projects
 {
     [DefaultClassOptions]
     [FileAttachment("File")]
+    [CreatableItem(false)]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]

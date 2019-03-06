@@ -1,26 +1,26 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using DevExpress.Xpo;
+﻿//-----------------------------------------------------------------------
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module\BusinessObjects\Documents\PID.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
 using DevExpress.ExpressApp;
-using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
-using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
-using DevExpress.Persistent.Validation;
+using DevExpress.Xpo;
 using FileSystemData.BusinessObjects;
-using LPO.Module.BusinessObjects.Projects;
 using LPO.Module.BusinessObjects.Instruments;
 using LPO.Module.BusinessObjects.Motors;
+using LPO.Module.BusinessObjects.Projects;
+using System;
+using System.ComponentModel;
+using System.Linq;
 
 namespace LPO.Module.BusinessObjects.Documents
 {
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
-    [DefaultProperty("DisplayName")]
+    [DefaultProperty("DisplayName"), CreatableItem(false)]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).

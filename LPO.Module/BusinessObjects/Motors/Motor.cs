@@ -1,4 +1,10 @@
-﻿using DevExpress.ExpressApp;
+﻿//-----------------------------------------------------------------------
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module\BusinessObjects\Motors\Motor.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
@@ -10,7 +16,7 @@ using System.Linq;
 namespace LPO.Module.BusinessObjects.Motors
 {
     [DefaultClassOptions]
-    [ImageName("BO_Motor")]
+    [ImageName("BO_Motor"), CreatableItem(false)]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Bottom)]
     //[Persistent("DatabaseTableName")]

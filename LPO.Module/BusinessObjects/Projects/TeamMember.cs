@@ -15,6 +15,7 @@ namespace LPO.Module.BusinessObjects.Projects
 {
     [DefaultClassOptions]
     [ImageName("BO_Person")]
+    [CreatableItem(false)]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]

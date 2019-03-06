@@ -1,4 +1,10 @@
-﻿using DevExpress.Persistent.Base;
+﻿//-----------------------------------------------------------------------
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module\BusinessObjects\Project Schedule\ProjectEvent.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using LPO.Module.BusinessObjects.Projects;
@@ -8,6 +14,7 @@ using System.Linq;
 namespace LPO.Module.BusinessObjects.Project_Schedule
 {
     [DefaultClassOptions]
+    [CreatableItem(false)]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
