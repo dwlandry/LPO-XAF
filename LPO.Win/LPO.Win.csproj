@@ -70,6 +70,7 @@
     <Reference Include="DevExpress.ExpressApp.Objects.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Office.Win.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ReportsV2.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Scheduler.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -80,6 +81,8 @@
     <Reference Include="DevExpress.ExpressApp.Security.Xpo.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.Win.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Validation.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>

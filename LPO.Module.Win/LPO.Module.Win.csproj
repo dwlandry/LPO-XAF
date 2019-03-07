@@ -192,6 +192,10 @@
     <Compile Include="Controllers\ViewController1.Designer.cs">
       <DependentUpon>ViewController1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\WinSchedulerViewController.cs" />
+    <Compile Include="Controllers\WinSchedulerViewController.Designer.cs">
+      <DependentUpon>WinSchedulerViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\FolderBrowseEditor.cs" />
     <Compile Include="WinModule.cs">
       <SubType>Component</SubType>

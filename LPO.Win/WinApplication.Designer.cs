@@ -1,5 +1,13 @@
-﻿namespace LPO.Win {
-    partial class LPOWindowsFormsApplication {
+﻿//-----------------------------------------------------------------------
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Win\WinApplication.Designer.cs" company="David W. Landry III">
+//     Author: _**David Landry**_
+//     *Copyright (c) David W. Landry III. All rights reserved.*
+// </copyright>
+//-----------------------------------------------------------------------
+namespace LPO.Win
+{
+    partial class LPOWindowsFormsApplication
+    {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -9,8 +17,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if(disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +32,8 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
             this.module3 = new LPO.Module.LPOModule();
@@ -42,6 +53,9 @@
             this.reportsWindowsFormsModuleV21 = new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2();
             this.fileAttachmentsWindowsFormsModule1 = new DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule();
             this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
+            this.treeListEditorsModuleBase1 = new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase();
+            this.treeListEditorsWindowsFormsModule1 = new DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule();
+            this.officeWindowsFormsModule1 = new DevExpress.ExpressApp.Office.Win.OfficeWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -66,6 +80,10 @@
             this.reportsModuleV21.EnableInplaceReports = true;
             this.reportsModuleV21.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
             // 
+            // officeWindowsFormsModule1
+            // 
+            this.officeWindowsFormsModule1.RichTextMailMergeDataType = null;
+            // 
             // LPOWindowsFormsApplication
             // 
             this.ApplicationName = "LPO";
@@ -78,11 +96,14 @@
             this.Modules.Add(this.reportsModuleV21);
             this.Modules.Add(this.fileSystemDataModule1);
             this.Modules.Add(this.conditionalAppearanceModule1);
+            this.Modules.Add(this.treeListEditorsModuleBase1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.validationWindowsFormsModule);
             this.Modules.Add(this.schedulerModuleBase1);
             this.Modules.Add(this.schedulerWindowsFormsModule1);
             this.Modules.Add(this.reportsWindowsFormsModuleV21);
+            this.Modules.Add(this.treeListEditorsWindowsFormsModule1);
+            this.Modules.Add(this.officeWindowsFormsModule1);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
             this.Modules.Add(this.hyperLinkPropertyEditorWindowsFormsModule1);
@@ -116,5 +137,8 @@
         private DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2 reportsWindowsFormsModuleV21;
         private DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule fileAttachmentsWindowsFormsModule1;
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule1;
+        private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase1;
+        private DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule treeListEditorsWindowsFormsModule1;
+        private DevExpress.ExpressApp.Office.Win.OfficeWindowsFormsModule officeWindowsFormsModule1;
     }
 }
