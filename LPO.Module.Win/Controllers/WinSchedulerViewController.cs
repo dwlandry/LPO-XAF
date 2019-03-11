@@ -9,6 +9,7 @@ using DevExpress.ExpressApp.Scheduler.Win;
 using DevExpress.Persistent.Base.General;
 using DevExpress.XtraScheduler;
 using DevExpress.XtraScheduler.UI;
+using LPO.Module.BusinessObjects.Project_Schedule;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace LPO.Module.Win.Controllers
 
     //-----------------------------------------------------------------------
     // 3/7/2019 - DLandry:  This particular solution was taken from the following DevExpress Support Question: https://www.devexpress.com/Support/Center/Question/Details/Q478349/how-do-i-customize-the-default-labels-and-their-colors-in-the-scheduler-control-listview
+    // 3/11/2019 - DLandry: Access objects selected in the current view: https://docs.devexpress.com/eXpressAppFramework/113324/task-based-help/views/how-to-access-objects-selected-in-the-current-view
     //-----------------------------------------------------------------------
     public partial class WinSchedulerViewController : ObjectViewController<ObjectView, IEvent>
     {
@@ -42,29 +44,35 @@ namespace LPO.Module.Win.Controllers
                 {
                     SchedulerControl scheduler = listEditor.SchedulerControl;
                     if (scheduler != null)
-                    {
                         SetupLabels(scheduler.Storage);
-                    }
+                    // Customize appearance of Appointment Display Text
+                    scheduler.InitAppointmentDisplayText += Scheduler_InitAppointmentDisplayText;
                 }
             }
             else
                 if (View is DetailView)
             {
-                foreach (SchedulerLabelPropertyEditor pe in ((DetailView)View).GetItems<SchedulerLabelPropertyEditor>())
-                {
-                    if (pe.Control != null)
-                    {
-                        SetupLabels(((AppointmentLabelEdit)pe.Control).Storage);
-                    }
+                foreach (SchedulerLabelPropertyEditor propertyEditory in ((DetailView)View).GetItems<SchedulerLabelPropertyEditor>())
+                    if (propertyEditory.Control != null)
+                        SetupLabels(((AppointmentLabelEdit)propertyEditory.Control).Storage);
                     else
-                    {
-                        pe.ControlCreated += new EventHandler<EventArgs>(pe_ControlCreated);
-                    }
-                }
+                        propertyEditory.ControlCreated += new EventHandler<EventArgs>(PropertyEditor_ControlCreated);
             }
         }
 
-        void pe_ControlCreated(object sender, EventArgs e)
+        private void Scheduler_InitAppointmentDisplayText(object sender, AppointmentDisplayTextEventArgs e)
+        {
+            SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
+
+            Appointment appointment = e.Appointment;
+
+            ProjectEvent obj = (ProjectEvent)listEditor.SourceObjectHelper.GetSourceObject(appointment);
+
+            if (obj != null)
+                e.Text = string.Format("{0}: {1}", obj.Project.ProjectNumber, e.Text);
+        }
+
+        void PropertyEditor_ControlCreated(object sender, EventArgs e)
         {
             SetupLabels(((AppointmentLabelEdit)((SchedulerLabelPropertyEditor)sender).Control).Storage);
         }
@@ -107,6 +115,16 @@ namespace LPO.Module.Win.Controllers
         {
             // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
+            if (View is ListView)
+            {
+                SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
+
+                if (listEditor != null && listEditor.SchedulerControl != null)
+                {
+                    SchedulerControl scheduler = listEditor.SchedulerControl;
+                    scheduler.InitAppointmentDisplayText -= Scheduler_InitAppointmentDisplayText;
+                }
+            }
         }
     }
 }
