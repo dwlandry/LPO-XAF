@@ -49,9 +49,6 @@
             <LayoutGroup Id="TeamMembers" ShowCaption="True" Caption="Team Members" TextAlignMode="AlignWithChildren" Index="3" RelativeSize="100" IsNewNode="True">
               <LayoutItem Id="TeamMembers" TextAlignMode="AutoSize" ViewItem="TeamMembers" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>
-            <LayoutGroup Id="GoBys" ShowCaption="True" Caption="Go Bys" TextAlignMode="AlignWithChildren" Index="4" RelativeSize="100" IsNewNode="True">
-              <LayoutItem Id="GoBys" TextAlignMode="AutoSize" ViewItem="GoBys" Index="0" RelativeSize="100" IsNewNode="True" />
-            </LayoutGroup>
             <LayoutGroup Id="Documents" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="5" RelativeSize="100" IsNewNode="True">
               <LayoutItem Id="Documents" TextAlignMode="AutoSize" ViewItem="Documents" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>

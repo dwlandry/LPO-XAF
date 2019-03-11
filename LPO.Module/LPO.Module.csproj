@@ -131,7 +131,6 @@
     <Compile Include="BusinessObjects\Components\Component.cs" />
     <Compile Include="BusinessObjects\Components\ComponentType.cs" />
     <Compile Include="BusinessObjects\Estimating\Category.cs" />
-    <Compile Include="BusinessObjects\GoBy Documents\GoByDocument.cs" />
     <Compile Include="BusinessObjects\Components\Manufacturer.cs" />
     <Compile Include="BusinessObjects\Instrument Spec\AssetType.cs" />
     <Compile Include="BusinessObjects\Instruments\Instrument.cs" />
@@ -149,7 +148,6 @@
     <Compile Include="BusinessObjects\Projects\Project.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectControlSystem.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectDocument.cs" />
-    <Compile Include="BusinessObjects\Projects\ProjectGoByDocument.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectParty.cs" />
     <Compile Include="BusinessObjects\Projects\TeamMember.cs" />
     <Compile Include="BusinessObjects\Supplier\Quote.cs" />
