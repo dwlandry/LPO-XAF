@@ -21,6 +21,7 @@ namespace LPO.Module.Win.Controllers
     //-----------------------------------------------------------------------
     // 3/7/2019 - DLandry:  This particular solution was taken from the following DevExpress Support Question: https://www.devexpress.com/Support/Center/Question/Details/Q478349/how-do-i-customize-the-default-labels-and-their-colors-in-the-scheduler-control-listview
     // 3/11/2019 - DLandry: Access objects selected in the current view: https://docs.devexpress.com/eXpressAppFramework/113324/task-based-help/views/how-to-access-objects-selected-in-the-current-view
+    // 3/11/2019 - DLandry: Customize the Appointment Flyout: https://docs.devexpress.com/WindowsForms/DevExpress.XtraScheduler.SchedulerControl.CustomizeAppointmentFlyout
     //-----------------------------------------------------------------------
     public partial class WinSchedulerViewController : ObjectViewController<ObjectView, IEvent>
     {
@@ -47,6 +48,10 @@ namespace LPO.Module.Win.Controllers
                         SetupLabels(scheduler.Storage);
                     // Customize appearance of Appointment Display Text
                     scheduler.InitAppointmentDisplayText += Scheduler_InitAppointmentDisplayText;
+
+                    // Customize Appointment Flyout
+                    scheduler.OptionsFlyout.SubjectAutoHeight = true;
+                    scheduler.CustomizeAppointmentFlyout += Scheduler_CustomizeAppointmentFlyout;
                 }
             }
             else
@@ -58,6 +63,17 @@ namespace LPO.Module.Win.Controllers
                     else
                         propertyEditory.ControlCreated += new EventHandler<EventArgs>(PropertyEditor_ControlCreated);
             }
+        }
+
+        private void Scheduler_CustomizeAppointmentFlyout(object sender, CustomizeAppointmentFlyoutEventArgs e)
+        {
+            SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
+            Appointment appointment = e.Appointment;
+            ProjectEvent obj = (ProjectEvent)listEditor.SourceObjectHelper.GetSourceObject(appointment);
+
+            if (obj != null)
+                e.Subject = String.Format("{0}{1}{2}", obj.Project.DisplayName, Environment.NewLine, e.Subject);
+            
         }
 
         private void Scheduler_InitAppointmentDisplayText(object sender, AppointmentDisplayTextEventArgs e)
@@ -123,6 +139,7 @@ namespace LPO.Module.Win.Controllers
                 {
                     SchedulerControl scheduler = listEditor.SchedulerControl;
                     scheduler.InitAppointmentDisplayText -= Scheduler_InitAppointmentDisplayText;
+                    scheduler.CustomizeAppointmentFlyout -= Scheduler_CustomizeAppointmentFlyout;
                 }
             }
         }
