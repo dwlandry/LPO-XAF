@@ -36,6 +36,7 @@ namespace LPO.Module.Win.Controllers
         {
             this.components = new System.ComponentModel.Container();
             this.simpleActionShowSchedulerTrifoldStandardReport = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
+            this.simpleActionShowSchedulerDailyReport = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
             // 
             // simpleActionShowSchedulerTrifoldStandardReport
             // 
@@ -43,12 +44,23 @@ namespace LPO.Module.Win.Controllers
             this.simpleActionShowSchedulerTrifoldStandardReport.Category = "Print";
             this.simpleActionShowSchedulerTrifoldStandardReport.ConfirmationMessage = null;
             this.simpleActionShowSchedulerTrifoldStandardReport.Id = "d697ff87-4e25-45e3-a333-ef3b57b2a479";
+            this.simpleActionShowSchedulerTrifoldStandardReport.ImageName = "Preview";
             this.simpleActionShowSchedulerTrifoldStandardReport.ToolTip = null;
             this.simpleActionShowSchedulerTrifoldStandardReport.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.simpleActionShowSchedulerTrifoldStandardReport_Execute);
+            // 
+            // simpleActionShowSchedulerDailyReport
+            // 
+            this.simpleActionShowSchedulerDailyReport.Caption = "Daily Schedule Report";
+            this.simpleActionShowSchedulerDailyReport.Category = "Print";
+            this.simpleActionShowSchedulerDailyReport.ConfirmationMessage = null;
+            this.simpleActionShowSchedulerDailyReport.Id = "2d6ecb5e-9c3b-4cf4-880e-4775d2667bae";
+            this.simpleActionShowSchedulerDailyReport.ToolTip = null;
+            this.simpleActionShowSchedulerDailyReport.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.simpleActionShowSchedulerDailyReport_Execute);
             // 
             // SchedulerViewController
             // 
             this.Actions.Add(this.simpleActionShowSchedulerTrifoldStandardReport);
+            this.Actions.Add(this.simpleActionShowSchedulerDailyReport);
             this.TargetObjectType = typeof(LPO.Module.BusinessObjects.Project_Schedule.ProjectEvent);
 
         }
@@ -56,5 +68,6 @@ namespace LPO.Module.Win.Controllers
         #endregion
 
         private DevExpress.ExpressApp.Actions.SimpleAction simpleActionShowSchedulerTrifoldStandardReport;
+        private DevExpress.ExpressApp.Actions.SimpleAction simpleActionShowSchedulerDailyReport;
     }
 }

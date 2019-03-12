@@ -64,5 +64,30 @@ namespace LPO.Module.Win.Controllers
                 }
             }
         }
+
+        private void simpleActionShowSchedulerDailyReport_Execute(object sender, SimpleActionExecuteEventArgs e)
+        {
+            if (View is ListView)
+            {
+                SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
+                if (listEditor != null)
+                {
+                    SchedulerControl scheduler = listEditor.SchedulerControl;
+                    if (scheduler != null)
+                    {
+                        // Bind custom scheduler reports to the Scheduler and invoke the Preview dialog
+                        // https://documentation.devexpress.com/WindowsForms/5729/Controls-and-Libraries/Scheduler/Examples/Printing-and-Reporting/How-to-Print-a-Scheduler-Using-a-Report-Preview-Step-by-Step-Guide
+                        XtraSchedulerReport1 xr = new XtraSchedulerReport1();
+                        SchedulerControlPrintAdapter scPrintAdapter = new SchedulerControlPrintAdapter(scheduler);
+                        xr.SchedulerAdapter = scPrintAdapter;
+                        xr.CreateDocument(true);
+                        using (ReportPrintTool printTool = new ReportPrintTool(xr))
+                        {
+                            printTool.ShowRibbonPreviewDialog();
+                        }
+                    }
+                }
+            }
+        }
     }
 }

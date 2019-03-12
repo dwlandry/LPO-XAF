@@ -2,7 +2,7 @@
 <Application Title="LPO">
   <NavigationItems>
     <Items>
-      <Item Id="Projects" ChildItemsDisplayStyle="List" Index="0" IsNewNode="True">
+      <Item Id="Projects" ChildItemsDisplayStyle="List" Index="0" ImageName="BO_Project" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Projects" ChildItemsDisplayStyle="List" Index="0" ImageName="BO_Folder" ViewId="Project_ListView" IsNewNode="True">
             <Items IsNewNode="True">
@@ -28,14 +28,12 @@
           <Item Id="Category_ListView" Removed="True" />
           <Item Id="Client_ListView" Removed="True" />
           <Item Id="CommunicationItem_ListView" Removed="True" />
-          <Item Id="GoByDocument_ListView" Removed="True" />
           <Item Id="Instrument_ListView" Removed="True" />
           <Item Id="InstrumentStatus_ListView" Removed="True" />
           <Item Id="InstrumentType_ListView" Removed="True" />
           <Item Id="ItemComment_ListView" Removed="True" />
           <Item Id="Origination_ListView" Removed="True" />
           <Item Id="Project_ListView" Removed="True" />
-          <Item Id="ProjectGoByDocument_ListView" Removed="True" />
           <Item Id="TeamMember_ListView" Removed="True" />
         </Items>
       </Item>
@@ -52,7 +50,7 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="18.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <ListView Id="CommunicationItem_ListView" AutoExpandAllGroups="True" AllowEdit="True" AllowLink="False" AllowUnlink="False" FreezeColumnIndices="False" NewItemRowPosition="Bottom" />

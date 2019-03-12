@@ -84,11 +84,8 @@ namespace LPO.Module.Win.Controllers
         private void Scheduler_InitAppointmentDisplayText(object sender, AppointmentDisplayTextEventArgs e)
         {
             SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
-
             Appointment appointment = e.Appointment;
-
             ProjectEvent obj = (ProjectEvent)listEditor.SourceObjectHelper.GetSourceObject(appointment);
-
             if (obj != null)
                 e.Text = string.Format("{0}: {1}", obj.Project.ProjectNumber, e.Text);
         }
