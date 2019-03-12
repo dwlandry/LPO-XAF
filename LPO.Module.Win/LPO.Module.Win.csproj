@@ -140,6 +140,7 @@
     <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Reporting, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v18.1.Reporting.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -177,6 +178,12 @@
     <Compile Include="Controllers\DetailForm1.Designer.cs">
       <DependentUpon>DetailForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\SchedulerViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\SchedulerViewController.Designer.cs">
+      <DependentUpon>SchedulerViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\SvgSkinController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -208,6 +215,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controllers\DetailForm1.resx">
       <DependentUpon>DetailForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\SchedulerViewController.resx">
+      <DependentUpon>SchedulerViewController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>

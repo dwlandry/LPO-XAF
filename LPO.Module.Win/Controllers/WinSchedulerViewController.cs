@@ -38,6 +38,7 @@ namespace LPO.Module.Win.Controllers
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
+
             if (View is ListView)
             {
                 SchedulerListEditor listEditor = ((ListView)View).Editor as SchedulerListEditor;
@@ -45,13 +46,17 @@ namespace LPO.Module.Win.Controllers
                 {
                     SchedulerControl scheduler = listEditor.SchedulerControl;
                     if (scheduler != null)
+                    {
                         SetupLabels(scheduler.Storage);
-                    // Customize appearance of Appointment Display Text
-                    scheduler.InitAppointmentDisplayText += Scheduler_InitAppointmentDisplayText;
 
-                    // Customize Appointment Flyout
-                    scheduler.OptionsFlyout.SubjectAutoHeight = true;
-                    scheduler.CustomizeAppointmentFlyout += Scheduler_CustomizeAppointmentFlyout;
+                        // Customize appearance of Appointment Display Text
+                        scheduler.InitAppointmentDisplayText += Scheduler_InitAppointmentDisplayText;
+
+                        // Customize Appointment Flyout
+                        scheduler.OptionsFlyout.SubjectAutoHeight = true;
+                        scheduler.CustomizeAppointmentFlyout += Scheduler_CustomizeAppointmentFlyout;
+
+                    }
                 }
             }
             else
@@ -73,7 +78,7 @@ namespace LPO.Module.Win.Controllers
 
             if (obj != null)
                 e.Subject = String.Format("{0}{1}{2}", obj.Project.DisplayName, Environment.NewLine, e.Subject);
-            
+
         }
 
         private void Scheduler_InitAppointmentDisplayText(object sender, AppointmentDisplayTextEventArgs e)
