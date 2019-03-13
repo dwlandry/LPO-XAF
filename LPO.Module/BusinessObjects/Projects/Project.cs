@@ -39,6 +39,9 @@ namespace LPO.Module.BusinessObjects.Projects
             IsActive = true;
         }
 
+        decimal originalBudget;
+        string projectManager;
+        string projectAlias;
         string projectNumber;
         [Size(30)]
         public string ProjectNumber
@@ -123,5 +126,7 @@ namespace LPO.Module.BusinessObjects.Projects
 
         [Association("Project-Motors")]
         public XPCollection<Motor> Motors => GetCollection<Motor>(nameof(Motors));
+
+
     }
 }
