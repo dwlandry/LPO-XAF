@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module.Win\Controllers\ProjectDetailViewController.cs" company="David W. Landry III">
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module.Win\Controllers\ExpandableLayoutGroupViewController.cs" company="David W. Landry III">
 //     Author: _**David Landry**_
 //     *Copyright (c) David W. Landry III. All rights reserved.*
 // </copyright>
@@ -23,12 +23,12 @@ namespace LPO.Module.Win.Controllers
     //  How to customize the Layout Control: https://documentation.devexpress.com/eXpressAppFramework/112817/Concepts/UI-Construction/View-Items/View-Items-Layout-Customization
     //  How to provide the capability to collapse or expand layout groups: https://www.devexpress.com/Support/Center/Question/Details/S135134/how-do-i-provide-the-capability-to-collapse-or-expand-layout-groups-and-persist-their/
     // ----------------------------------------------------------
-    public partial class ProjectDetailViewController : ViewController<DetailView>, IModelExtender
+    public partial class ExpandableLayoutGroupViewController : ViewController<DetailView>, IModelExtender
     {
         Dictionary<string, IModelWinLayoutGroupExtender> itemToWinModelLayoutGroupExtenderMap = new Dictionary<string, IModelWinLayoutGroupExtender>();
         WinLayoutManager winLayoutManager = null;
 
-        public ProjectDetailViewController()
+        public ExpandableLayoutGroupViewController()
         {
             InitializeComponent();
             // Target required Views (via the TargetXXX properties) and create their Actions.
@@ -70,30 +70,6 @@ namespace LPO.Module.Win.Controllers
             base.OnDeactivated();
         }
 
-        //private void ProjectDetailViewController_Activated(object sender, EventArgs e)
-        //{
-        //    View.ControlsCreated += View_ControlsCreated;
-        //}
-
-        //private void View_ControlsCreated(object sender, EventArgs e)
-        //{
-        //    // Access the current Detail View 
-        //    //DetailView view = View;
-        //    //// Access the Detail View's Control as a Layout Control 
-        //    //DevExpress.XtraLayout.LayoutControl layoutControl =
-        //    //   ((DevExpress.XtraLayout.LayoutControl)view.Control);
-        //    ////Customize the LayoutControl's settings as required 
-        //    ////Access the Layout Control's Layout Items 
-        //    //foreach (object obj in layoutControl.Items)
-        //    //{
-        //    //    if (obj is DevExpress.XtraLayout.LayoutControlItem)
-        //    //    {
-        //    //        DevExpress.XtraLayout.LayoutControlItem layoutControlItem =
-        //    //           (DevExpress.XtraLayout.LayoutControlItem)obj;
-        //    //        //Customize the current LayoutItem's settings 
-        //    //    }
-        //    //}
-        //}
 
         public void ExtendModelInterfaces(ModelInterfaceExtenders extenders)
         {

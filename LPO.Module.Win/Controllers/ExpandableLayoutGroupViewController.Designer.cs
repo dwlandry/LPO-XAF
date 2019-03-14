@@ -1,12 +1,12 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module.Win\Controllers\ProjectDetailViewController.Designer.cs" company="David W. Landry III">
+// <copyright file="F:\my files\Programming\landrys-lpo\LPO-XAF\LPO.Module.Win\Controllers\ExpandableLayoutGroupViewController.Designer.cs" company="David W. Landry III">
 //     Author: _**David Landry**_
 //     *Copyright (c) David W. Landry III. All rights reserved.*
 // </copyright>
 //-----------------------------------------------------------------------
 namespace LPO.Module.Win.Controllers
 {
-    partial class ProjectDetailViewController
+    partial class ExpandableLayoutGroupViewController
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace LPO.Module.Win.Controllers
             // 
             // ProjectDetailViewController
             // 
-            this.TargetObjectType = typeof(LPO.Module.BusinessObjects.Projects.Project);
+            //this.TargetObjectType = typeof(LPO.Module.BusinessObjects.Projects.Project);
             this.TargetViewType = DevExpress.ExpressApp.ViewType.DetailView;
             this.TypeOfView = typeof(DevExpress.ExpressApp.DetailView);
             //this.Activated += new System.EventHandler(this.ProjectDetailViewController_Activated);

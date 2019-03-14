@@ -193,9 +193,9 @@
     <Compile Include="Controllers\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ProjectDetailViewController.cs" />
-    <Compile Include="Controllers\ProjectDetailViewController.Designer.cs">
-      <DependentUpon>ProjectDetailViewController.cs</DependentUpon>
+    <Compile Include="Controllers\ExpandableLayoutGroupViewController.cs" />
+    <Compile Include="Controllers\ExpandableLayoutGroupViewController.Designer.cs">
+      <DependentUpon>ExpandableLayoutGroupViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\WinSchedulerViewController.cs" />
     <Compile Include="Controllers\WinSchedulerViewController.Designer.cs">
@@ -214,8 +214,8 @@
     <EmbeddedResource Include="Controllers\DetailForm1.resx">
       <DependentUpon>DetailForm1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\ProjectDetailViewController.resx">
-      <DependentUpon>ProjectDetailViewController.cs</DependentUpon>
+    <EmbeddedResource Include="Controllers\ExpandableLayoutGroupViewController.resx">
+      <DependentUpon>ExpandableLayoutGroupViewController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\SchedulerViewController.resx">
       <DependentUpon>SchedulerViewController.cs</DependentUpon>
