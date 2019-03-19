@@ -67,6 +67,9 @@
             <LayoutGroup Id="Motors" ShowCaption="True" TextAlignMode="AlignWithChildren" Index="10" RelativeSize="100" IsNewNode="True">
               <LayoutItem Id="Motors" TextAlignMode="AutoSize" ViewItem="Motors" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>
+            <LayoutGroup Id="ClientStandardDocs" ImageName="BO_Document" Caption="Client Standard Docs" IsNewNode="True">
+              <LayoutItem Id="ClientStandardDocs" ViewItem="ClientDocuments" IsNewNode="True" />
+            </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>
       </Layout>

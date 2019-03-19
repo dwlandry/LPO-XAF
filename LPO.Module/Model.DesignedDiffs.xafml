@@ -84,6 +84,18 @@
       </Columns>
     </ListView>
     <ListView Id="Project_CommunicationItems_ListView" AllowEdit="True" AllowLink="False" AllowUnlink="False" AutoExpandAllGroups="True" NewItemRowPosition="Bottom" />
+    <DetailView Id="Project_DetailView">
+      <Items>
+        <PropertyEditor Id="ClientDocuments" PropertyName="Client.Documents" View="ClientDocument_ListView" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="ClientStandardDocs" ImageName="MultipleDocuments" IsNewNode="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="Project_ListView" AllowDelete="False" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="Project_TeamMembers_ListView" AutoExpandAllGroups="True">
       <Columns>
