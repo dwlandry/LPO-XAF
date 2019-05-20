@@ -172,12 +172,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DetailForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controllers\DetailForm1.Designer.cs">
-      <DependentUpon>DetailForm1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\SchedulerViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -186,12 +180,6 @@
     </Compile>
     <Compile Include="Controllers\SvgSkinController.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controllers\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ExpandableLayoutGroupViewController.cs" />
     <Compile Include="Controllers\ExpandableLayoutGroupViewController.Designer.cs">
@@ -211,17 +199,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controllers\DetailForm1.resx">
-      <DependentUpon>DetailForm1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ExpandableLayoutGroupViewController.resx">
       <DependentUpon>ExpandableLayoutGroupViewController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\SchedulerViewController.resx">
       <DependentUpon>SchedulerViewController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Properties\licenses.licx" />

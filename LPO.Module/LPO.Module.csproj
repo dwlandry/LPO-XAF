@@ -144,7 +144,9 @@
     <Compile Include="BusinessObjects\Instruments\InstrumentAlarm.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentAlarmType.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentComponent.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentDrawing.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentSpecItem.cs" />
+    <Compile Include="BusinessObjects\Instruments\InstrumentSpecSheet.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentStatus.cs" />
     <Compile Include="BusinessObjects\Instruments\InstrumentType.cs" />
     <Compile Include="BusinessObjects\Instrument Spec\SpecItemPickListItem.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="BusinessObjects\Projects\ProjectDocument.cs" />
     <Compile Include="BusinessObjects\Projects\ProjectParty.cs" />
     <Compile Include="BusinessObjects\Projects\TeamMember.cs" />
+    <Compile Include="BusinessObjects\Projects\TeamMember2.cs" />
     <Compile Include="BusinessObjects\Supplier\Quote.cs" />
     <Compile Include="BusinessObjects\Supplier\Supplier.cs" />
     <Compile Include="Controllers\InstrumentSpecItemsListViewController.cs">
@@ -170,6 +173,12 @@
     </Compile>
     <Compile Include="Controllers\InstrumentViewController.Designer.cs">
       <DependentUpon>InstrumentViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Team Members\ObjectChangedViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\Team Members\ObjectChangedViewController.Designer.cs">
+      <DependentUpon>ObjectChangedViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">

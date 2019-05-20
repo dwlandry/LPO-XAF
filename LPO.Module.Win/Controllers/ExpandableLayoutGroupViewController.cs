@@ -20,6 +20,7 @@ namespace LPO.Module.Win.Controllers
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppViewControllertopic.aspx.
     // ----------------------------------------------------------
     // 3/12/2019: David Landry: Reference links: 
+    //  This controllers makes it possible to expand and collapse groups in a detail view.
     //  How to customize the Layout Control: https://documentation.devexpress.com/eXpressAppFramework/112817/Concepts/UI-Construction/View-Items/View-Items-Layout-Customization
     //  How to provide the capability to collapse or expand layout groups: https://www.devexpress.com/Support/Center/Question/Details/S135134/how-do-i-provide-the-capability-to-collapse-or-expand-layout-groups-and-persist-their/
     // ----------------------------------------------------------

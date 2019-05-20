@@ -107,6 +107,9 @@ namespace LPO.Module.BusinessObjects.Projects
         [Association("Project-TeamMembers")]
         public XPCollection<TeamMember> TeamMembers => GetCollection<TeamMember>(nameof(TeamMembers));
 
+        [Association("Project-TeamMembers2")]
+        public XPCollection<TeamMember2> TeamMembers2 => GetCollection<TeamMember2>(nameof(TeamMembers2));
+
         [Association("Project-Documents")]
         public XPCollection<ProjectDocument> Documents => GetCollection<ProjectDocument>(nameof(Documents));
 

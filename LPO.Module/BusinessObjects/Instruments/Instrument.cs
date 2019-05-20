@@ -113,6 +113,7 @@ namespace LPO.Module.BusinessObjects.Instruments
         }
 
 
+        InstrumentSpecSheet latestSpecSheetPDF;
         Project project;
         [Association("Project-Instruments")]
         public Project Project
@@ -297,6 +298,13 @@ namespace LPO.Module.BusinessObjects.Instruments
         {
             get => controlSystem;
             set => SetPropertyValue(nameof(ControlSystem), ref controlSystem, value);
+        }
+
+
+        public InstrumentSpecSheet LatestSpecSheetPDF
+        {
+            get => latestSpecSheetPDF;
+            set => SetPropertyValue(nameof(LatestSpecSheetPDF), ref latestSpecSheetPDF, value);
         }
 
     }
